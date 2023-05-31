@@ -1,0 +1,15 @@
+1. Common Variable names: lowercase with underscore. (input_data)
+
+2. Data Members: lowercase with underscore, and with a trailing underscore. (input_data_)
+
+  Note: 
+    a. some names like (AP, L, etc) will still be uppercase.
+    b. const / static members will be uppercase.
+
+3. Function Names: lowerCamelCase. (doSomething)
+
+4. Class Names: UpperCamelCase. (TypeSystem)
+
+5. Namespace Names: lowercase without underscore. Shorter is better. (namespace alice)
+
+6. File Names: lowercase with underscore. (alice_main.cpp)
