@@ -35,11 +35,11 @@ LTLFormula: T_TRUE { $$ = new alice::ltl::True(); }
             | T_L_PAREN LTLFormula T_R_PAREN { $$ = $2; }
             | T_NEG LTLFormula { $$ = new alice::ltl::Negation($2); }
             | T_NEXT LTLFormula { $$ = new alice::ltl::Next($2); }
-            | T_ALWAYS LTLFormula { $$ = new alice::ltl::Always($2); }
-            | T_EVEN LTLFormula { $$ = new alice::ltl::Eventually($2); }
+            | T_ALWAYS LTLFormula { $$ = new alice::ltl::Negation(new alice::ltl::Until(new alice::ltl::True(), new alice::ltl::Negation($2))); }
+            | T_EVEN LTLFormula { $$ = new alice::ltl::Until(new alice::ltl::True(), $2); }
             | LTLFormula T_UNTIL LTLFormula { $$ = new alice::ltl::Until($1, $3); }
             | LTLFormula T_CONJ LTLFormula { $$ = new alice::ltl::Conjunction($1, $3); }
-            | LTLFormula T_DISJ LTLFormula { $$ = new alice::ltl::Disjunction($1, $3); }
-            | LTLFormula T_IMPL LTLFormula { $$ = new alice::ltl::Implication($1, $3); }
+            | LTLFormula T_DISJ LTLFormula { $$ = new alice::ltl::Negation(new alice::ltl::Conjunction(new alice::ltl::Negation($1), new alice::ltl::Negation($3))); }
+            | LTLFormula T_IMPL LTLFormula { $$ = new alice::ltl::Negation(new alice::ltl::Conjunction($1, new alice::ltl::Negation($3))); }
             ;
 %%

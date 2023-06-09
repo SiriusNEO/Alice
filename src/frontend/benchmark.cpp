@@ -4,6 +4,7 @@
 
 #include "../ltl/parser.hpp"
 #include "../ltl/printer.hpp"
+#include "../ltl/tree_deleter.hpp"
 #include "../utils/logging.hpp"
 
 namespace alice {
@@ -44,8 +45,9 @@ Benchmark::Benchmark(const char* file_path)
 }
 
 Benchmark::~Benchmark() {
-  for (auto formula : global_formulas_) delete formula;
-  for (auto formula : local_formulas_) delete formula.second;
+  auto deleter = ltl::TreeDeleter();
+  for (auto formula : global_formulas_) deleter.visit(formula);
+  for (auto formula : local_formulas_) deleter.visit(formula.second);
 }
 
 ltl::LTLFormula* Benchmark::next_glb() {
@@ -62,17 +64,14 @@ void Benchmark::print() const {
   // print global formulas
   std::cout << "\tGlobal Formulas: " << std::endl;
   for (auto f : global_formulas_) {
-    ltl::LTLPrinter printer;
-    printer.visit(f);
-    std::cout << "\t\t" << printer.str_ << std::endl;
+    std::cout << "\t\t" << toString(f) << std::endl;
   }
 
   // print local formulas
   std::cout << "\tLocal Formulas: " << std::endl;
   for (auto p : local_formulas_) {
-    ltl::LTLPrinter printer;
-    printer.visit(p.second);
-    std::cout << "\t\tsi=" << p.first << "\t" << printer.str_ << std::endl;
+    std::cout << "\t\tsi=" << p.first << "\t" << toString(p.second)
+              << std::endl;
   }
 }
 

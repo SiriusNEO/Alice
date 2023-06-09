@@ -18,36 +18,8 @@ void LTLPrinter::_visit(Conjunction* node) {
   this->str_ += ")";
 }
 
-void LTLPrinter::_visit(Disjunction* node) {
-  this->str_ += "(";
-  this->visit(node->left_son_);
-  this->str_ += " \\/ ";
-  this->visit(node->right_son_);
-  this->str_ += ")";
-}
-
-void LTLPrinter::_visit(Implication* node) {
-  this->str_ += "(";
-  this->visit(node->left_son_);
-  this->str_ += " -> ";
-  this->visit(node->right_son_);
-  this->str_ += ")";
-}
-
 void LTLPrinter::_visit(Next* node) {
   this->str_ += "(X";
-  this->visit(node->left_son_);
-  this->str_ += ")";
-}
-
-void LTLPrinter::_visit(Always* node) {
-  this->str_ += "(G";
-  this->visit(node->left_son_);
-  this->str_ += ")";
-}
-
-void LTLPrinter::_visit(Eventually* node) {
-  this->str_ += "(F";
   this->visit(node->left_son_);
   this->str_ += ")";
 }
@@ -65,6 +37,12 @@ void LTLPrinter::_visit(AtomicProposition* node) {
 }
 
 void LTLPrinter::_visit(True* node) { this->str_ += "true"; }
+
+std::string toString(LTLFormula* formula) {
+  LTLPrinter printer;
+  printer.visit(formula);
+  return printer.str_;
+}
 
 }  // namespace ltl
 

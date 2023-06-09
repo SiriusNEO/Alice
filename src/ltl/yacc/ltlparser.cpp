@@ -1369,13 +1369,13 @@ yyreduce:
 
   case 8:
 #line 38 "src/ltl/yacc/ltlparser.y"
-                                  { (yyval.node_val) = new alice::ltl::Always((yyvsp[0].node_val)); }
+                                  { (yyval.node_val) = new alice::ltl::Negation(new alice::ltl::Until(new alice::ltl::True(), new alice::ltl::Negation((yyvsp[0].node_val)))); }
 #line 1374 "src/ltl/yacc/ltlparser.cpp"
     break;
 
   case 9:
 #line 39 "src/ltl/yacc/ltlparser.y"
-                                { (yyval.node_val) = new alice::ltl::Eventually((yyvsp[0].node_val)); }
+                                { (yyval.node_val) = new alice::ltl::Until(new alice::ltl::True(), (yyvsp[0].node_val)); }
 #line 1380 "src/ltl/yacc/ltlparser.cpp"
     break;
 
@@ -1393,13 +1393,13 @@ yyreduce:
 
   case 12:
 #line 42 "src/ltl/yacc/ltlparser.y"
-                                           { (yyval.node_val) = new alice::ltl::Disjunction((yyvsp[-2].node_val), (yyvsp[0].node_val)); }
+                                           { (yyval.node_val) = new alice::ltl::Negation(new alice::ltl::Conjunction(new alice::ltl::Negation((yyvsp[-2].node_val)), new alice::ltl::Negation((yyvsp[0].node_val)))); }
 #line 1398 "src/ltl/yacc/ltlparser.cpp"
     break;
 
   case 13:
 #line 43 "src/ltl/yacc/ltlparser.y"
-                                           { (yyval.node_val) = new alice::ltl::Implication((yyvsp[-2].node_val), (yyvsp[0].node_val)); }
+                                           { (yyval.node_val) = new alice::ltl::Negation(new alice::ltl::Conjunction((yyvsp[-2].node_val), new alice::ltl::Negation((yyvsp[0].node_val)))); }
 #line 1404 "src/ltl/yacc/ltlparser.cpp"
     break;
 

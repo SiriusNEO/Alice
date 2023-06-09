@@ -1,24 +1,20 @@
 /*!
- * \file src/ltl/printer.hpp
- * \brief Printer for LTL formulas.
+ * \file src/ltl/tree_deleter.hpp
+ * \brief Recursively delete the LTL AST.
  * \author SiriusNEO
  */
 
 #include "ast.hpp"
 
-#ifndef LTL_PRINTER_H_
-#define LTL_PRINTER_H_
+#ifndef LTL_TREE_DELETER_HPP_
+#define LTL_TREE_DELETER_HPP_
 
 namespace alice {
 
 namespace ltl {
 
-class LTLPrinter : public LTLVisitor {
+class TreeDeleter : public LTLVisitor {
  public:
-  std::string str_;
-
-  LTLPrinter() : str_(), LTLVisitor() {}
-
   virtual void _visit(Negation* node) override;
 
   virtual void _visit(Conjunction* node) override;
@@ -32,10 +28,8 @@ class LTLPrinter : public LTLVisitor {
   virtual void _visit(True* node) override;
 };
 
-std::string toString(LTLFormula* formula);
-
 }  // namespace ltl
 
 }  // namespace alice
 
-#endif  // LTL_PRINTER_H_
+#endif  // LTL_TREE_DELETER_HPP_
