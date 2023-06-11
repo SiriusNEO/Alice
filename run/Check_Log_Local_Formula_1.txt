@@ -13,42 +13,42 @@
 		(!c), 
 	}
 	Elementary Sets: 
-		B1 = {(!(X(a /\ c))), (!(a /\ c)), (!a), (!b), (!c), }
-		B2 = {(!(X(a /\ c))), (!(a /\ c)), (!a), (!b), c, }
-		B3 = {(!(X(a /\ c))), (!(a /\ c)), (!a), b, (!c), }
-		B4 = {(!(X(a /\ c))), (!(a /\ c)), (!a), b, c, }
-		B5 = {(!(X(a /\ c))), (!(a /\ c)), a, (!b), (!c), }
-		B6 = {(!(X(a /\ c))), (!(a /\ c)), a, b, (!c), }
-		B7 = {(a /\ c), (!(X(a /\ c))), a, (!b), c, }
-		B8 = {(a /\ c), (!(X(a /\ c))), a, b, c, }
-		B9 = {(X(a /\ c)), (!(a /\ c)), (!a), (!b), (!c), }
-		B10 = {(X(a /\ c)), (!(a /\ c)), (!a), (!b), c, }
-		B11 = {(X(a /\ c)), (!(a /\ c)), (!a), b, (!c), }
-		B12 = {(X(a /\ c)), (!(a /\ c)), (!a), b, c, }
-		B13 = {(X(a /\ c)), (!(a /\ c)), a, (!b), (!c), }
-		B14 = {(X(a /\ c)), (!(a /\ c)), a, b, (!c), }
-		B15 = {(a /\ c), (X(a /\ c)), a, (!b), c, }
-		B16 = {(a /\ c), (X(a /\ c)), a, b, c, }
+		B1 = {(!a), (!(X(a /\ c))), (!c), (!b), (!(a /\ c)), }
+		B2 = {c, (!a), (!(X(a /\ c))), (!b), (!(a /\ c)), }
+		B3 = {(!a), (!(X(a /\ c))), b, (!c), (!(a /\ c)), }
+		B4 = {c, (!a), (!(X(a /\ c))), b, (!(a /\ c)), }
+		B5 = {(!(X(a /\ c))), a, (!c), (!b), (!(a /\ c)), }
+		B6 = {(!(X(a /\ c))), a, b, (!c), (!(a /\ c)), }
+		B7 = {(a /\ c), c, (!(X(a /\ c))), a, (!b), }
+		B8 = {(a /\ c), c, (!(X(a /\ c))), a, b, }
+		B9 = {(X(a /\ c)), (!a), (!c), (!b), (!(a /\ c)), }
+		B10 = {(X(a /\ c)), c, (!a), (!b), (!(a /\ c)), }
+		B11 = {(X(a /\ c)), (!a), b, (!c), (!(a /\ c)), }
+		B12 = {(X(a /\ c)), c, (!a), b, (!(a /\ c)), }
+		B13 = {(X(a /\ c)), a, (!c), (!b), (!(a /\ c)), }
+		B14 = {(X(a /\ c)), a, b, (!c), (!(a /\ c)), }
+		B15 = {(a /\ c), (X(a /\ c)), c, a, (!b), }
+		B16 = {(a /\ c), (X(a /\ c)), c, a, b, }
 
 [Generalized Buechi Automata]
 	Is NonBlocking: True
 	States: 
-		q0 = {(!(X(a /\ c))), (!(a /\ c)), (!a), (!b), (!c), }
-		q1 = {(!(X(a /\ c))), (!(a /\ c)), (!a), (!b), c, }
-		q2 = {(!(X(a /\ c))), (!(a /\ c)), (!a), b, (!c), }
-		q3 = {(!(X(a /\ c))), (!(a /\ c)), (!a), b, c, }
-		q4 = {(!(X(a /\ c))), (!(a /\ c)), a, (!b), (!c), }
-		q5 = {(!(X(a /\ c))), (!(a /\ c)), a, b, (!c), }
-		q6 = {(a /\ c), (!(X(a /\ c))), a, (!b), c, }
-		q7 = {(a /\ c), (!(X(a /\ c))), a, b, c, }
-		q8 = {(X(a /\ c)), (!(a /\ c)), (!a), (!b), (!c), }
-		q9 = {(X(a /\ c)), (!(a /\ c)), (!a), (!b), c, }
-		q10 = {(X(a /\ c)), (!(a /\ c)), (!a), b, (!c), }
-		q11 = {(X(a /\ c)), (!(a /\ c)), (!a), b, c, }
-		q12 = {(X(a /\ c)), (!(a /\ c)), a, (!b), (!c), }
-		q13 = {(X(a /\ c)), (!(a /\ c)), a, b, (!c), }
-		q14 = {(a /\ c), (X(a /\ c)), a, (!b), c, }
-		q15 = {(a /\ c), (X(a /\ c)), a, b, c, }
+		q0 = {(!a), (!(X(a /\ c))), (!c), (!b), (!(a /\ c)), }
+		q1 = {c, (!a), (!(X(a /\ c))), (!b), (!(a /\ c)), }
+		q2 = {(!a), (!(X(a /\ c))), b, (!c), (!(a /\ c)), }
+		q3 = {c, (!a), (!(X(a /\ c))), b, (!(a /\ c)), }
+		q4 = {(!(X(a /\ c))), a, (!c), (!b), (!(a /\ c)), }
+		q5 = {(!(X(a /\ c))), a, b, (!c), (!(a /\ c)), }
+		q6 = {(a /\ c), c, (!(X(a /\ c))), a, (!b), }
+		q7 = {(a /\ c), c, (!(X(a /\ c))), a, b, }
+		q8 = {(X(a /\ c)), (!a), (!c), (!b), (!(a /\ c)), }
+		q9 = {(X(a /\ c)), c, (!a), (!b), (!(a /\ c)), }
+		q10 = {(X(a /\ c)), (!a), b, (!c), (!(a /\ c)), }
+		q11 = {(X(a /\ c)), c, (!a), b, (!(a /\ c)), }
+		q12 = {(X(a /\ c)), a, (!c), (!b), (!(a /\ c)), }
+		q13 = {(X(a /\ c)), a, b, (!c), (!(a /\ c)), }
+		q14 = {(a /\ c), (X(a /\ c)), c, a, (!b), }
+		q15 = {(a /\ c), (X(a /\ c)), c, a, b, }
 		trap = {}
 	Initial States: {q0, q1, q2, q3, q4, q5, q6, q7, }
 	Alphabet: 
@@ -63,9 +63,6 @@
 	Delta: 
 		q0 -> trap (symbols: {a, b, c, })
 		q0 -> trap (symbols: {a, b, })
-		q0 -> trap (symbols: {a, c, })
-		q0 -> trap (symbols: {a, })
-		q0 -> trap (symbols: {b, c, })
 		q0 -> trap (symbols: {b, })
 		q0 -> trap (symbols: {c, })
 		q0 -> q0 (symbols: {})
@@ -80,11 +77,11 @@
 		q0 -> q11 (symbols: {})
 		q0 -> q12 (symbols: {})
 		q0 -> q13 (symbols: {})
+		q0 -> trap (symbols: {a, c, })
+		q0 -> trap (symbols: {a, })
+		q0 -> trap (symbols: {b, c, })
 		q1 -> trap (symbols: {a, b, c, })
 		q1 -> trap (symbols: {a, b, })
-		q1 -> trap (symbols: {a, c, })
-		q1 -> trap (symbols: {a, })
-		q1 -> trap (symbols: {b, c, })
 		q1 -> trap (symbols: {b, })
 		q1 -> q0 (symbols: {c, })
 		q1 -> q1 (symbols: {c, })
@@ -99,11 +96,11 @@
 		q1 -> q12 (symbols: {c, })
 		q1 -> q13 (symbols: {c, })
 		q1 -> trap (symbols: {})
+		q1 -> trap (symbols: {a, c, })
+		q1 -> trap (symbols: {a, })
+		q1 -> trap (symbols: {b, c, })
 		q2 -> trap (symbols: {a, b, c, })
 		q2 -> trap (symbols: {a, b, })
-		q2 -> trap (symbols: {a, c, })
-		q2 -> trap (symbols: {a, })
-		q2 -> trap (symbols: {b, c, })
 		q2 -> q0 (symbols: {b, })
 		q2 -> q1 (symbols: {b, })
 		q2 -> q2 (symbols: {b, })
@@ -118,8 +115,14 @@
 		q2 -> q13 (symbols: {b, })
 		q2 -> trap (symbols: {c, })
 		q2 -> trap (symbols: {})
+		q2 -> trap (symbols: {a, c, })
+		q2 -> trap (symbols: {a, })
+		q2 -> trap (symbols: {b, c, })
 		q3 -> trap (symbols: {a, b, c, })
 		q3 -> trap (symbols: {a, b, })
+		q3 -> trap (symbols: {b, })
+		q3 -> trap (symbols: {c, })
+		q3 -> trap (symbols: {})
 		q3 -> trap (symbols: {a, c, })
 		q3 -> trap (symbols: {a, })
 		q3 -> q0 (symbols: {b, c, })
@@ -134,11 +137,11 @@
 		q3 -> q11 (symbols: {b, c, })
 		q3 -> q12 (symbols: {b, c, })
 		q3 -> q13 (symbols: {b, c, })
-		q3 -> trap (symbols: {b, })
-		q3 -> trap (symbols: {c, })
-		q3 -> trap (symbols: {})
 		q4 -> trap (symbols: {a, b, c, })
 		q4 -> trap (symbols: {a, b, })
+		q4 -> trap (symbols: {b, })
+		q4 -> trap (symbols: {c, })
+		q4 -> trap (symbols: {})
 		q4 -> trap (symbols: {a, c, })
 		q4 -> q0 (symbols: {a, })
 		q4 -> q1 (symbols: {a, })
@@ -153,9 +156,6 @@
 		q4 -> q12 (symbols: {a, })
 		q4 -> q13 (symbols: {a, })
 		q4 -> trap (symbols: {b, c, })
-		q4 -> trap (symbols: {b, })
-		q4 -> trap (symbols: {c, })
-		q4 -> trap (symbols: {})
 		q5 -> trap (symbols: {a, b, c, })
 		q5 -> q0 (symbols: {a, b, })
 		q5 -> q1 (symbols: {a, b, })
@@ -169,14 +169,17 @@
 		q5 -> q11 (symbols: {a, b, })
 		q5 -> q12 (symbols: {a, b, })
 		q5 -> q13 (symbols: {a, b, })
-		q5 -> trap (symbols: {a, c, })
-		q5 -> trap (symbols: {a, })
-		q5 -> trap (symbols: {b, c, })
 		q5 -> trap (symbols: {b, })
 		q5 -> trap (symbols: {c, })
 		q5 -> trap (symbols: {})
+		q5 -> trap (symbols: {a, c, })
+		q5 -> trap (symbols: {a, })
+		q5 -> trap (symbols: {b, c, })
 		q6 -> trap (symbols: {a, b, c, })
 		q6 -> trap (symbols: {a, b, })
+		q6 -> trap (symbols: {b, })
+		q6 -> trap (symbols: {c, })
+		q6 -> trap (symbols: {})
 		q6 -> q0 (symbols: {a, c, })
 		q6 -> q1 (symbols: {a, c, })
 		q6 -> q2 (symbols: {a, c, })
@@ -191,9 +194,6 @@
 		q6 -> q13 (symbols: {a, c, })
 		q6 -> trap (symbols: {a, })
 		q6 -> trap (symbols: {b, c, })
-		q6 -> trap (symbols: {b, })
-		q6 -> trap (symbols: {c, })
-		q6 -> trap (symbols: {})
 		q7 -> q0 (symbols: {a, b, c, })
 		q7 -> q1 (symbols: {a, b, c, })
 		q7 -> q2 (symbols: {a, b, c, })
@@ -207,108 +207,108 @@
 		q7 -> q12 (symbols: {a, b, c, })
 		q7 -> q13 (symbols: {a, b, c, })
 		q7 -> trap (symbols: {a, b, })
-		q7 -> trap (symbols: {a, c, })
-		q7 -> trap (symbols: {a, })
-		q7 -> trap (symbols: {b, c, })
 		q7 -> trap (symbols: {b, })
 		q7 -> trap (symbols: {c, })
 		q7 -> trap (symbols: {})
+		q7 -> trap (symbols: {a, c, })
+		q7 -> trap (symbols: {a, })
+		q7 -> trap (symbols: {b, c, })
 		q8 -> trap (symbols: {a, b, c, })
 		q8 -> trap (symbols: {a, b, })
-		q8 -> trap (symbols: {a, c, })
-		q8 -> trap (symbols: {a, })
-		q8 -> trap (symbols: {b, c, })
 		q8 -> trap (symbols: {b, })
 		q8 -> trap (symbols: {c, })
 		q8 -> q6 (symbols: {})
 		q8 -> q7 (symbols: {})
 		q8 -> q14 (symbols: {})
 		q8 -> q15 (symbols: {})
+		q8 -> trap (symbols: {a, c, })
+		q8 -> trap (symbols: {a, })
+		q8 -> trap (symbols: {b, c, })
 		q9 -> trap (symbols: {a, b, c, })
 		q9 -> trap (symbols: {a, b, })
-		q9 -> trap (symbols: {a, c, })
-		q9 -> trap (symbols: {a, })
-		q9 -> trap (symbols: {b, c, })
 		q9 -> trap (symbols: {b, })
 		q9 -> q6 (symbols: {c, })
 		q9 -> q7 (symbols: {c, })
 		q9 -> q14 (symbols: {c, })
 		q9 -> q15 (symbols: {c, })
 		q9 -> trap (symbols: {})
+		q9 -> trap (symbols: {a, c, })
+		q9 -> trap (symbols: {a, })
+		q9 -> trap (symbols: {b, c, })
 		q10 -> trap (symbols: {a, b, c, })
 		q10 -> trap (symbols: {a, b, })
-		q10 -> trap (symbols: {a, c, })
-		q10 -> trap (symbols: {a, })
-		q10 -> trap (symbols: {b, c, })
 		q10 -> q6 (symbols: {b, })
 		q10 -> q7 (symbols: {b, })
 		q10 -> q14 (symbols: {b, })
 		q10 -> q15 (symbols: {b, })
 		q10 -> trap (symbols: {c, })
 		q10 -> trap (symbols: {})
+		q10 -> trap (symbols: {a, c, })
+		q10 -> trap (symbols: {a, })
+		q10 -> trap (symbols: {b, c, })
 		q11 -> trap (symbols: {a, b, c, })
 		q11 -> trap (symbols: {a, b, })
+		q11 -> trap (symbols: {b, })
+		q11 -> trap (symbols: {c, })
+		q11 -> trap (symbols: {})
 		q11 -> trap (symbols: {a, c, })
 		q11 -> trap (symbols: {a, })
 		q11 -> q6 (symbols: {b, c, })
 		q11 -> q7 (symbols: {b, c, })
 		q11 -> q14 (symbols: {b, c, })
 		q11 -> q15 (symbols: {b, c, })
-		q11 -> trap (symbols: {b, })
-		q11 -> trap (symbols: {c, })
-		q11 -> trap (symbols: {})
 		q12 -> trap (symbols: {a, b, c, })
 		q12 -> trap (symbols: {a, b, })
+		q12 -> trap (symbols: {b, })
+		q12 -> trap (symbols: {c, })
+		q12 -> trap (symbols: {})
 		q12 -> trap (symbols: {a, c, })
 		q12 -> q6 (symbols: {a, })
 		q12 -> q7 (symbols: {a, })
 		q12 -> q14 (symbols: {a, })
 		q12 -> q15 (symbols: {a, })
 		q12 -> trap (symbols: {b, c, })
-		q12 -> trap (symbols: {b, })
-		q12 -> trap (symbols: {c, })
-		q12 -> trap (symbols: {})
 		q13 -> trap (symbols: {a, b, c, })
 		q13 -> q6 (symbols: {a, b, })
 		q13 -> q7 (symbols: {a, b, })
 		q13 -> q14 (symbols: {a, b, })
 		q13 -> q15 (symbols: {a, b, })
-		q13 -> trap (symbols: {a, c, })
-		q13 -> trap (symbols: {a, })
-		q13 -> trap (symbols: {b, c, })
 		q13 -> trap (symbols: {b, })
 		q13 -> trap (symbols: {c, })
 		q13 -> trap (symbols: {})
+		q13 -> trap (symbols: {a, c, })
+		q13 -> trap (symbols: {a, })
+		q13 -> trap (symbols: {b, c, })
 		q14 -> trap (symbols: {a, b, c, })
 		q14 -> trap (symbols: {a, b, })
+		q14 -> trap (symbols: {b, })
+		q14 -> trap (symbols: {c, })
+		q14 -> trap (symbols: {})
 		q14 -> q6 (symbols: {a, c, })
 		q14 -> q7 (symbols: {a, c, })
 		q14 -> q14 (symbols: {a, c, })
 		q14 -> q15 (symbols: {a, c, })
 		q14 -> trap (symbols: {a, })
 		q14 -> trap (symbols: {b, c, })
-		q14 -> trap (symbols: {b, })
-		q14 -> trap (symbols: {c, })
-		q14 -> trap (symbols: {})
 		q15 -> q6 (symbols: {a, b, c, })
 		q15 -> q7 (symbols: {a, b, c, })
 		q15 -> q14 (symbols: {a, b, c, })
 		q15 -> q15 (symbols: {a, b, c, })
 		q15 -> trap (symbols: {a, b, })
-		q15 -> trap (symbols: {a, c, })
-		q15 -> trap (symbols: {a, })
-		q15 -> trap (symbols: {b, c, })
 		q15 -> trap (symbols: {b, })
 		q15 -> trap (symbols: {c, })
 		q15 -> trap (symbols: {})
+		q15 -> trap (symbols: {a, c, })
+		q15 -> trap (symbols: {a, })
+		q15 -> trap (symbols: {b, c, })
 		trap -> trap (symbols: {a, b, c, })
 		trap -> trap (symbols: {a, b, })
-		trap -> trap (symbols: {a, c, })
-		trap -> trap (symbols: {a, })
-		trap -> trap (symbols: {b, c, })
 		trap -> trap (symbols: {b, })
 		trap -> trap (symbols: {c, })
 		trap -> trap (symbols: {})
+		trap -> trap (symbols: {a, c, })
+		trap -> trap (symbols: {a, })
+		trap -> trap (symbols: {b, c, })
 	F: 
 
 [Nondeterministic Buechi Automata]

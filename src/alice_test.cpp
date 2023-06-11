@@ -28,7 +28,7 @@ int main() {
 
   // **********************************************************
   LOG(INFO) << "Test TS benchmark";
-  frontend::Benchmark benchmark("../data/LTL.txt");
+  frontend::Benchmark benchmark("../data/benchmark.txt");
   benchmark.show(std::cout);
   // **********************************************************
 

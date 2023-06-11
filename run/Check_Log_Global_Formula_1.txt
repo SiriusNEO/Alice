@@ -15,12 +15,12 @@
 		(!c), 
 	}
 	Elementary Sets: 
-		B1 = {true, (!(true U (!(!((!a) /\ (!b)))))), (!((!a) /\ (!b))), (!a), b, (!c), }
-		B2 = {true, (!(true U (!(!((!a) /\ (!b)))))), (!((!a) /\ (!b))), (!a), b, c, }
-		B3 = {true, (!(true U (!(!((!a) /\ (!b)))))), (!((!a) /\ (!b))), a, (!b), (!c), }
-		B4 = {true, (!(true U (!(!((!a) /\ (!b)))))), (!((!a) /\ (!b))), a, (!b), c, }
-		B5 = {true, (!(true U (!(!((!a) /\ (!b)))))), (!((!a) /\ (!b))), a, b, (!c), }
-		B6 = {true, (!(true U (!(!((!a) /\ (!b)))))), (!((!a) /\ (!b))), a, b, c, }
+		B1 = {true, (!((!a) /\ (!b))), (!(true U (!(!((!a) /\ (!b)))))), (!a), b, (!c), }
+		B2 = {true, (!((!a) /\ (!b))), (!(true U (!(!((!a) /\ (!b)))))), (!a), b, c, }
+		B3 = {true, (!((!a) /\ (!b))), (!(true U (!(!((!a) /\ (!b)))))), a, (!b), (!c), }
+		B4 = {true, (!((!a) /\ (!b))), (!(true U (!(!((!a) /\ (!b)))))), a, (!b), c, }
+		B5 = {true, (!((!a) /\ (!b))), (!(true U (!(!((!a) /\ (!b)))))), a, b, (!c), }
+		B6 = {true, (!((!a) /\ (!b))), (!(true U (!(!((!a) /\ (!b)))))), a, b, c, }
 		B7 = {((!a) /\ (!b)), true, (!(true U (!(!((!a) /\ (!b)))))), (!a), (!b), (!c), }
 		B8 = {((!a) /\ (!b)), true, (!(true U (!(!((!a) /\ (!b)))))), (!a), (!b), c, }
 		B9 = {true, (true U (!(!((!a) /\ (!b))))), (!((!a) /\ (!b))), (!a), b, (!c), }
@@ -35,12 +35,12 @@
 [Generalized Buechi Automata]
 	Is NonBlocking: True
 	States: 
-		q0 = {true, (!(true U (!(!((!a) /\ (!b)))))), (!((!a) /\ (!b))), (!a), b, (!c), }
-		q1 = {true, (!(true U (!(!((!a) /\ (!b)))))), (!((!a) /\ (!b))), (!a), b, c, }
-		q2 = {true, (!(true U (!(!((!a) /\ (!b)))))), (!((!a) /\ (!b))), a, (!b), (!c), }
-		q3 = {true, (!(true U (!(!((!a) /\ (!b)))))), (!((!a) /\ (!b))), a, (!b), c, }
-		q4 = {true, (!(true U (!(!((!a) /\ (!b)))))), (!((!a) /\ (!b))), a, b, (!c), }
-		q5 = {true, (!(true U (!(!((!a) /\ (!b)))))), (!((!a) /\ (!b))), a, b, c, }
+		q0 = {true, (!((!a) /\ (!b))), (!(true U (!(!((!a) /\ (!b)))))), (!a), b, (!c), }
+		q1 = {true, (!((!a) /\ (!b))), (!(true U (!(!((!a) /\ (!b)))))), (!a), b, c, }
+		q2 = {true, (!((!a) /\ (!b))), (!(true U (!(!((!a) /\ (!b)))))), a, (!b), (!c), }
+		q3 = {true, (!((!a) /\ (!b))), (!(true U (!(!((!a) /\ (!b)))))), a, (!b), c, }
+		q4 = {true, (!((!a) /\ (!b))), (!(true U (!(!((!a) /\ (!b)))))), a, b, (!c), }
+		q5 = {true, (!((!a) /\ (!b))), (!(true U (!(!((!a) /\ (!b)))))), a, b, c, }
 		q6 = {((!a) /\ (!b)), true, (!(true U (!(!((!a) /\ (!b)))))), (!a), (!b), (!c), }
 		q7 = {((!a) /\ (!b)), true, (!(true U (!(!((!a) /\ (!b)))))), (!a), (!b), c, }
 		q8 = {true, (true U (!(!((!a) /\ (!b))))), (!((!a) /\ (!b))), (!a), b, (!c), }
@@ -317,12 +317,12 @@
 [Nondeterministic Buechi Automata]
 	Is NonBlocking: True
 	States: 
-		<q0, 1> = {true, (!(true U (!(!((!a) /\ (!b)))))), (!((!a) /\ (!b))), (!a), b, (!c), }
-		<q1, 1> = {true, (!(true U (!(!((!a) /\ (!b)))))), (!((!a) /\ (!b))), (!a), b, c, }
-		<q2, 1> = {true, (!(true U (!(!((!a) /\ (!b)))))), (!((!a) /\ (!b))), a, (!b), (!c), }
-		<q3, 1> = {true, (!(true U (!(!((!a) /\ (!b)))))), (!((!a) /\ (!b))), a, (!b), c, }
-		<q4, 1> = {true, (!(true U (!(!((!a) /\ (!b)))))), (!((!a) /\ (!b))), a, b, (!c), }
-		<q5, 1> = {true, (!(true U (!(!((!a) /\ (!b)))))), (!((!a) /\ (!b))), a, b, c, }
+		<q0, 1> = {true, (!((!a) /\ (!b))), (!(true U (!(!((!a) /\ (!b)))))), (!a), b, (!c), }
+		<q1, 1> = {true, (!((!a) /\ (!b))), (!(true U (!(!((!a) /\ (!b)))))), (!a), b, c, }
+		<q2, 1> = {true, (!((!a) /\ (!b))), (!(true U (!(!((!a) /\ (!b)))))), a, (!b), (!c), }
+		<q3, 1> = {true, (!((!a) /\ (!b))), (!(true U (!(!((!a) /\ (!b)))))), a, (!b), c, }
+		<q4, 1> = {true, (!((!a) /\ (!b))), (!(true U (!(!((!a) /\ (!b)))))), a, b, (!c), }
+		<q5, 1> = {true, (!((!a) /\ (!b))), (!(true U (!(!((!a) /\ (!b)))))), a, b, c, }
 		<q6, 1> = {((!a) /\ (!b)), true, (!(true U (!(!((!a) /\ (!b)))))), (!a), (!b), (!c), }
 		<q7, 1> = {((!a) /\ (!b)), true, (!(true U (!(!((!a) /\ (!b)))))), (!a), (!b), c, }
 		<q8, 1> = {true, (true U (!(!((!a) /\ (!b))))), (!((!a) /\ (!b))), (!a), b, (!c), }
@@ -345,11 +345,8 @@
 		{c, }
 		{}
 	Delta: 
-		<q0, 1> -> <trap, 1> (symbols: {a, b, c, })
-		<q0, 1> -> <trap, 1> (symbols: {a, b, })
-		<q0, 1> -> <trap, 1> (symbols: {a, c, })
-		<q0, 1> -> <trap, 1> (symbols: {a, })
-		<q0, 1> -> <trap, 1> (symbols: {b, c, })
+		<q0, 1> -> <trap, 1> (symbols: {})
+		<q0, 1> -> <trap, 1> (symbols: {c, })
 		<q0, 1> -> <q0, 1> (symbols: {b, })
 		<q0, 1> -> <q1, 1> (symbols: {b, })
 		<q0, 1> -> <q2, 1> (symbols: {b, })
@@ -358,12 +355,14 @@
 		<q0, 1> -> <q5, 1> (symbols: {b, })
 		<q0, 1> -> <q6, 1> (symbols: {b, })
 		<q0, 1> -> <q7, 1> (symbols: {b, })
-		<q0, 1> -> <trap, 1> (symbols: {c, })
-		<q0, 1> -> <trap, 1> (symbols: {})
-		<q1, 1> -> <trap, 1> (symbols: {a, b, c, })
-		<q1, 1> -> <trap, 1> (symbols: {a, b, })
-		<q1, 1> -> <trap, 1> (symbols: {a, c, })
-		<q1, 1> -> <trap, 1> (symbols: {a, })
+		<q0, 1> -> <trap, 1> (symbols: {b, c, })
+		<q0, 1> -> <trap, 1> (symbols: {a, b, c, })
+		<q0, 1> -> <trap, 1> (symbols: {a, b, })
+		<q0, 1> -> <trap, 1> (symbols: {a, c, })
+		<q0, 1> -> <trap, 1> (symbols: {a, })
+		<q1, 1> -> <trap, 1> (symbols: {})
+		<q1, 1> -> <trap, 1> (symbols: {c, })
+		<q1, 1> -> <trap, 1> (symbols: {b, })
 		<q1, 1> -> <q0, 1> (symbols: {b, c, })
 		<q1, 1> -> <q1, 1> (symbols: {b, c, })
 		<q1, 1> -> <q2, 1> (symbols: {b, c, })
@@ -372,9 +371,14 @@
 		<q1, 1> -> <q5, 1> (symbols: {b, c, })
 		<q1, 1> -> <q6, 1> (symbols: {b, c, })
 		<q1, 1> -> <q7, 1> (symbols: {b, c, })
-		<q1, 1> -> <trap, 1> (symbols: {b, })
-		<q1, 1> -> <trap, 1> (symbols: {c, })
-		<q1, 1> -> <trap, 1> (symbols: {})
+		<q1, 1> -> <trap, 1> (symbols: {a, b, c, })
+		<q1, 1> -> <trap, 1> (symbols: {a, b, })
+		<q1, 1> -> <trap, 1> (symbols: {a, c, })
+		<q1, 1> -> <trap, 1> (symbols: {a, })
+		<q2, 1> -> <trap, 1> (symbols: {})
+		<q2, 1> -> <trap, 1> (symbols: {c, })
+		<q2, 1> -> <trap, 1> (symbols: {b, })
+		<q2, 1> -> <trap, 1> (symbols: {b, c, })
 		<q2, 1> -> <trap, 1> (symbols: {a, b, c, })
 		<q2, 1> -> <trap, 1> (symbols: {a, b, })
 		<q2, 1> -> <trap, 1> (symbols: {a, c, })
@@ -386,10 +390,10 @@
 		<q2, 1> -> <q5, 1> (symbols: {a, })
 		<q2, 1> -> <q6, 1> (symbols: {a, })
 		<q2, 1> -> <q7, 1> (symbols: {a, })
-		<q2, 1> -> <trap, 1> (symbols: {b, c, })
-		<q2, 1> -> <trap, 1> (symbols: {b, })
-		<q2, 1> -> <trap, 1> (symbols: {c, })
-		<q2, 1> -> <trap, 1> (symbols: {})
+		<q3, 1> -> <trap, 1> (symbols: {})
+		<q3, 1> -> <trap, 1> (symbols: {c, })
+		<q3, 1> -> <trap, 1> (symbols: {b, })
+		<q3, 1> -> <trap, 1> (symbols: {b, c, })
 		<q3, 1> -> <trap, 1> (symbols: {a, b, c, })
 		<q3, 1> -> <trap, 1> (symbols: {a, b, })
 		<q3, 1> -> <q0, 1> (symbols: {a, c, })
@@ -401,10 +405,10 @@
 		<q3, 1> -> <q6, 1> (symbols: {a, c, })
 		<q3, 1> -> <q7, 1> (symbols: {a, c, })
 		<q3, 1> -> <trap, 1> (symbols: {a, })
-		<q3, 1> -> <trap, 1> (symbols: {b, c, })
-		<q3, 1> -> <trap, 1> (symbols: {b, })
-		<q3, 1> -> <trap, 1> (symbols: {c, })
-		<q3, 1> -> <trap, 1> (symbols: {})
+		<q4, 1> -> <trap, 1> (symbols: {})
+		<q4, 1> -> <trap, 1> (symbols: {c, })
+		<q4, 1> -> <trap, 1> (symbols: {b, })
+		<q4, 1> -> <trap, 1> (symbols: {b, c, })
 		<q4, 1> -> <trap, 1> (symbols: {a, b, c, })
 		<q4, 1> -> <q0, 1> (symbols: {a, b, })
 		<q4, 1> -> <q1, 1> (symbols: {a, b, })
@@ -416,10 +420,10 @@
 		<q4, 1> -> <q7, 1> (symbols: {a, b, })
 		<q4, 1> -> <trap, 1> (symbols: {a, c, })
 		<q4, 1> -> <trap, 1> (symbols: {a, })
-		<q4, 1> -> <trap, 1> (symbols: {b, c, })
-		<q4, 1> -> <trap, 1> (symbols: {b, })
-		<q4, 1> -> <trap, 1> (symbols: {c, })
-		<q4, 1> -> <trap, 1> (symbols: {})
+		<q5, 1> -> <trap, 1> (symbols: {})
+		<q5, 1> -> <trap, 1> (symbols: {c, })
+		<q5, 1> -> <trap, 1> (symbols: {b, })
+		<q5, 1> -> <trap, 1> (symbols: {b, c, })
 		<q5, 1> -> <q0, 1> (symbols: {a, b, c, })
 		<q5, 1> -> <q1, 1> (symbols: {a, b, c, })
 		<q5, 1> -> <q2, 1> (symbols: {a, b, c, })
@@ -431,17 +435,6 @@
 		<q5, 1> -> <trap, 1> (symbols: {a, b, })
 		<q5, 1> -> <trap, 1> (symbols: {a, c, })
 		<q5, 1> -> <trap, 1> (symbols: {a, })
-		<q5, 1> -> <trap, 1> (symbols: {b, c, })
-		<q5, 1> -> <trap, 1> (symbols: {b, })
-		<q5, 1> -> <trap, 1> (symbols: {c, })
-		<q5, 1> -> <trap, 1> (symbols: {})
-		<q6, 1> -> <trap, 1> (symbols: {a, b, c, })
-		<q6, 1> -> <trap, 1> (symbols: {a, b, })
-		<q6, 1> -> <trap, 1> (symbols: {a, c, })
-		<q6, 1> -> <trap, 1> (symbols: {a, })
-		<q6, 1> -> <trap, 1> (symbols: {b, c, })
-		<q6, 1> -> <trap, 1> (symbols: {b, })
-		<q6, 1> -> <trap, 1> (symbols: {c, })
 		<q6, 1> -> <q0, 1> (symbols: {})
 		<q6, 1> -> <q1, 1> (symbols: {})
 		<q6, 1> -> <q2, 1> (symbols: {})
@@ -450,12 +443,14 @@
 		<q6, 1> -> <q5, 1> (symbols: {})
 		<q6, 1> -> <q6, 1> (symbols: {})
 		<q6, 1> -> <q7, 1> (symbols: {})
-		<q7, 1> -> <trap, 1> (symbols: {a, b, c, })
-		<q7, 1> -> <trap, 1> (symbols: {a, b, })
-		<q7, 1> -> <trap, 1> (symbols: {a, c, })
-		<q7, 1> -> <trap, 1> (symbols: {a, })
-		<q7, 1> -> <trap, 1> (symbols: {b, c, })
-		<q7, 1> -> <trap, 1> (symbols: {b, })
+		<q6, 1> -> <trap, 1> (symbols: {c, })
+		<q6, 1> -> <trap, 1> (symbols: {b, })
+		<q6, 1> -> <trap, 1> (symbols: {b, c, })
+		<q6, 1> -> <trap, 1> (symbols: {a, b, c, })
+		<q6, 1> -> <trap, 1> (symbols: {a, b, })
+		<q6, 1> -> <trap, 1> (symbols: {a, c, })
+		<q6, 1> -> <trap, 1> (symbols: {a, })
+		<q7, 1> -> <trap, 1> (symbols: {})
 		<q7, 1> -> <q0, 1> (symbols: {c, })
 		<q7, 1> -> <q1, 1> (symbols: {c, })
 		<q7, 1> -> <q2, 1> (symbols: {c, })
@@ -464,12 +459,14 @@
 		<q7, 1> -> <q5, 1> (symbols: {c, })
 		<q7, 1> -> <q6, 1> (symbols: {c, })
 		<q7, 1> -> <q7, 1> (symbols: {c, })
-		<q7, 1> -> <trap, 1> (symbols: {})
-		<q8, 1> -> <trap, 1> (symbols: {a, b, c, })
-		<q8, 1> -> <trap, 1> (symbols: {a, b, })
-		<q8, 1> -> <trap, 1> (symbols: {a, c, })
-		<q8, 1> -> <trap, 1> (symbols: {a, })
-		<q8, 1> -> <trap, 1> (symbols: {b, c, })
+		<q7, 1> -> <trap, 1> (symbols: {b, })
+		<q7, 1> -> <trap, 1> (symbols: {b, c, })
+		<q7, 1> -> <trap, 1> (symbols: {a, b, c, })
+		<q7, 1> -> <trap, 1> (symbols: {a, b, })
+		<q7, 1> -> <trap, 1> (symbols: {a, c, })
+		<q7, 1> -> <trap, 1> (symbols: {a, })
+		<q8, 1> -> <trap, 1> (symbols: {})
+		<q8, 1> -> <trap, 1> (symbols: {c, })
 		<q8, 1> -> <q8, 1> (symbols: {b, })
 		<q8, 1> -> <q9, 1> (symbols: {b, })
 		<q8, 1> -> <q10, 1> (symbols: {b, })
@@ -478,12 +475,14 @@
 		<q8, 1> -> <q13, 1> (symbols: {b, })
 		<q8, 1> -> <q14, 1> (symbols: {b, })
 		<q8, 1> -> <q15, 1> (symbols: {b, })
-		<q8, 1> -> <trap, 1> (symbols: {c, })
-		<q8, 1> -> <trap, 1> (symbols: {})
-		<q9, 1> -> <trap, 1> (symbols: {a, b, c, })
-		<q9, 1> -> <trap, 1> (symbols: {a, b, })
-		<q9, 1> -> <trap, 1> (symbols: {a, c, })
-		<q9, 1> -> <trap, 1> (symbols: {a, })
+		<q8, 1> -> <trap, 1> (symbols: {b, c, })
+		<q8, 1> -> <trap, 1> (symbols: {a, b, c, })
+		<q8, 1> -> <trap, 1> (symbols: {a, b, })
+		<q8, 1> -> <trap, 1> (symbols: {a, c, })
+		<q8, 1> -> <trap, 1> (symbols: {a, })
+		<q9, 1> -> <trap, 1> (symbols: {})
+		<q9, 1> -> <trap, 1> (symbols: {c, })
+		<q9, 1> -> <trap, 1> (symbols: {b, })
 		<q9, 1> -> <q8, 1> (symbols: {b, c, })
 		<q9, 1> -> <q9, 1> (symbols: {b, c, })
 		<q9, 1> -> <q10, 1> (symbols: {b, c, })
@@ -492,9 +491,14 @@
 		<q9, 1> -> <q13, 1> (symbols: {b, c, })
 		<q9, 1> -> <q14, 1> (symbols: {b, c, })
 		<q9, 1> -> <q15, 1> (symbols: {b, c, })
-		<q9, 1> -> <trap, 1> (symbols: {b, })
-		<q9, 1> -> <trap, 1> (symbols: {c, })
-		<q9, 1> -> <trap, 1> (symbols: {})
+		<q9, 1> -> <trap, 1> (symbols: {a, b, c, })
+		<q9, 1> -> <trap, 1> (symbols: {a, b, })
+		<q9, 1> -> <trap, 1> (symbols: {a, c, })
+		<q9, 1> -> <trap, 1> (symbols: {a, })
+		<q10, 1> -> <trap, 1> (symbols: {})
+		<q10, 1> -> <trap, 1> (symbols: {c, })
+		<q10, 1> -> <trap, 1> (symbols: {b, })
+		<q10, 1> -> <trap, 1> (symbols: {b, c, })
 		<q10, 1> -> <trap, 1> (symbols: {a, b, c, })
 		<q10, 1> -> <trap, 1> (symbols: {a, b, })
 		<q10, 1> -> <trap, 1> (symbols: {a, c, })
@@ -506,10 +510,10 @@
 		<q10, 1> -> <q13, 1> (symbols: {a, })
 		<q10, 1> -> <q14, 1> (symbols: {a, })
 		<q10, 1> -> <q15, 1> (symbols: {a, })
-		<q10, 1> -> <trap, 1> (symbols: {b, c, })
-		<q10, 1> -> <trap, 1> (symbols: {b, })
-		<q10, 1> -> <trap, 1> (symbols: {c, })
-		<q10, 1> -> <trap, 1> (symbols: {})
+		<q11, 1> -> <trap, 1> (symbols: {})
+		<q11, 1> -> <trap, 1> (symbols: {c, })
+		<q11, 1> -> <trap, 1> (symbols: {b, })
+		<q11, 1> -> <trap, 1> (symbols: {b, c, })
 		<q11, 1> -> <trap, 1> (symbols: {a, b, c, })
 		<q11, 1> -> <trap, 1> (symbols: {a, b, })
 		<q11, 1> -> <q8, 1> (symbols: {a, c, })
@@ -521,10 +525,10 @@
 		<q11, 1> -> <q14, 1> (symbols: {a, c, })
 		<q11, 1> -> <q15, 1> (symbols: {a, c, })
 		<q11, 1> -> <trap, 1> (symbols: {a, })
-		<q11, 1> -> <trap, 1> (symbols: {b, c, })
-		<q11, 1> -> <trap, 1> (symbols: {b, })
-		<q11, 1> -> <trap, 1> (symbols: {c, })
-		<q11, 1> -> <trap, 1> (symbols: {})
+		<q12, 1> -> <trap, 1> (symbols: {})
+		<q12, 1> -> <trap, 1> (symbols: {c, })
+		<q12, 1> -> <trap, 1> (symbols: {b, })
+		<q12, 1> -> <trap, 1> (symbols: {b, c, })
 		<q12, 1> -> <trap, 1> (symbols: {a, b, c, })
 		<q12, 1> -> <q8, 1> (symbols: {a, b, })
 		<q12, 1> -> <q9, 1> (symbols: {a, b, })
@@ -536,10 +540,10 @@
 		<q12, 1> -> <q15, 1> (symbols: {a, b, })
 		<q12, 1> -> <trap, 1> (symbols: {a, c, })
 		<q12, 1> -> <trap, 1> (symbols: {a, })
-		<q12, 1> -> <trap, 1> (symbols: {b, c, })
-		<q12, 1> -> <trap, 1> (symbols: {b, })
-		<q12, 1> -> <trap, 1> (symbols: {c, })
-		<q12, 1> -> <trap, 1> (symbols: {})
+		<q13, 1> -> <trap, 1> (symbols: {})
+		<q13, 1> -> <trap, 1> (symbols: {c, })
+		<q13, 1> -> <trap, 1> (symbols: {b, })
+		<q13, 1> -> <trap, 1> (symbols: {b, c, })
 		<q13, 1> -> <q8, 1> (symbols: {a, b, c, })
 		<q13, 1> -> <q9, 1> (symbols: {a, b, c, })
 		<q13, 1> -> <q10, 1> (symbols: {a, b, c, })
@@ -551,17 +555,6 @@
 		<q13, 1> -> <trap, 1> (symbols: {a, b, })
 		<q13, 1> -> <trap, 1> (symbols: {a, c, })
 		<q13, 1> -> <trap, 1> (symbols: {a, })
-		<q13, 1> -> <trap, 1> (symbols: {b, c, })
-		<q13, 1> -> <trap, 1> (symbols: {b, })
-		<q13, 1> -> <trap, 1> (symbols: {c, })
-		<q13, 1> -> <trap, 1> (symbols: {})
-		<q14, 1> -> <trap, 1> (symbols: {a, b, c, })
-		<q14, 1> -> <trap, 1> (symbols: {a, b, })
-		<q14, 1> -> <trap, 1> (symbols: {a, c, })
-		<q14, 1> -> <trap, 1> (symbols: {a, })
-		<q14, 1> -> <trap, 1> (symbols: {b, c, })
-		<q14, 1> -> <trap, 1> (symbols: {b, })
-		<q14, 1> -> <trap, 1> (symbols: {c, })
 		<q14, 1> -> <q8, 1> (symbols: {})
 		<q14, 1> -> <q9, 1> (symbols: {})
 		<q14, 1> -> <q10, 1> (symbols: {})
@@ -570,12 +563,14 @@
 		<q14, 1> -> <q13, 1> (symbols: {})
 		<q14, 1> -> <q14, 1> (symbols: {})
 		<q14, 1> -> <q15, 1> (symbols: {})
-		<q15, 1> -> <trap, 1> (symbols: {a, b, c, })
-		<q15, 1> -> <trap, 1> (symbols: {a, b, })
-		<q15, 1> -> <trap, 1> (symbols: {a, c, })
-		<q15, 1> -> <trap, 1> (symbols: {a, })
-		<q15, 1> -> <trap, 1> (symbols: {b, c, })
-		<q15, 1> -> <trap, 1> (symbols: {b, })
+		<q14, 1> -> <trap, 1> (symbols: {c, })
+		<q14, 1> -> <trap, 1> (symbols: {b, })
+		<q14, 1> -> <trap, 1> (symbols: {b, c, })
+		<q14, 1> -> <trap, 1> (symbols: {a, b, c, })
+		<q14, 1> -> <trap, 1> (symbols: {a, b, })
+		<q14, 1> -> <trap, 1> (symbols: {a, c, })
+		<q14, 1> -> <trap, 1> (symbols: {a, })
+		<q15, 1> -> <trap, 1> (symbols: {})
 		<q15, 1> -> <q8, 1> (symbols: {c, })
 		<q15, 1> -> <q9, 1> (symbols: {c, })
 		<q15, 1> -> <q10, 1> (symbols: {c, })
@@ -584,15 +579,20 @@
 		<q15, 1> -> <q13, 1> (symbols: {c, })
 		<q15, 1> -> <q14, 1> (symbols: {c, })
 		<q15, 1> -> <q15, 1> (symbols: {c, })
-		<q15, 1> -> <trap, 1> (symbols: {})
+		<q15, 1> -> <trap, 1> (symbols: {b, })
+		<q15, 1> -> <trap, 1> (symbols: {b, c, })
+		<q15, 1> -> <trap, 1> (symbols: {a, b, c, })
+		<q15, 1> -> <trap, 1> (symbols: {a, b, })
+		<q15, 1> -> <trap, 1> (symbols: {a, c, })
+		<q15, 1> -> <trap, 1> (symbols: {a, })
+		<trap, 1> -> <trap, 1> (symbols: {})
+		<trap, 1> -> <trap, 1> (symbols: {c, })
+		<trap, 1> -> <trap, 1> (symbols: {b, })
+		<trap, 1> -> <trap, 1> (symbols: {b, c, })
 		<trap, 1> -> <trap, 1> (symbols: {a, b, c, })
 		<trap, 1> -> <trap, 1> (symbols: {a, b, })
 		<trap, 1> -> <trap, 1> (symbols: {a, c, })
 		<trap, 1> -> <trap, 1> (symbols: {a, })
-		<trap, 1> -> <trap, 1> (symbols: {b, c, })
-		<trap, 1> -> <trap, 1> (symbols: {b, })
-		<trap, 1> -> <trap, 1> (symbols: {c, })
-		<trap, 1> -> <trap, 1> (symbols: {})
 	F: {<q0, 1>, <q1, 1>, <q2, 1>, <q3, 1>, <q4, 1>, <q5, 1>, <q6, 1>, <q7, 1>, }
 
 [Transition System: Producted TS]

@@ -19,6 +19,11 @@ namespace ltl {
   check_flag = false; \
   break
 
+/*!
+ * \brief Collecting closure and elementary sets in the LTL formula.
+ * Rerference: Principles of Model Checking, P276, Definition 5.34; P277,
+ * Figure 5.20.
+ */
 class ClosureAnalyzer : public LTLVisitor {
  public:
   std::vector<LTLFormula*> closure_;

@@ -1,9 +1,7 @@
 [Benchmark]
-	Global Formulas: (Total 3)
+	Global Formulas: (Total 1)
 		(!(true U (!(!((!a) /\ (!b))))))
-		(!(true U (!(a /\ b))))
-		(!(true U (!(true U (a /\ b)))))
 	Local Formulas: (Total 3)
 		si=1	(X(a /\ c))
 		si=2	(!(true U a))
-		si=3	(c U (a /\ (!b)))
+		si=3	(c U (!a))
