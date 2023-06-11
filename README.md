@@ -7,7 +7,7 @@
 
 ![](https://img.shields.io/badge/example-passed-success)
 
-[Docs (Parser)](docs/Parser.md) | [Docs (Screenshots)](assets/Screenshots.md)
+[Docs (Parser)](docs/Parser.md) | [Docs (Screenshots)](docs/Screenshots.md)
 
 Alice is an [A]utomatic [Li]near Temporal Logic [C]hecking Syst[e]m implemented in C++.
 
