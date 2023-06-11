@@ -1,0 +1,23 @@
+[Transition System]
+	States: {s0, s1, s2, s3, s4, s5, }
+	Transitions: {t0, t1, t2, t3, t4, t5, t6, t7, t8, }
+	Initial States: {s0, }
+	Actions: {0, 1, 2, }
+	AP: {a, b, c, }
+	Edges: 
+		s0 -> s1 (transition: t0, action: 1)
+		s0 -> s3 (transition: t1, action: 0)
+		s1 -> s4 (transition: t3, action: 2)
+		s2 -> s1 (transition: t4, action: 2)
+		s3 -> s1 (transition: t2, action: 2)
+		s4 -> s1 (transition: t7, action: 0)
+		s4 -> s5 (transition: t8, action: 1)
+		s5 -> s2 (transition: t5, action: 0)
+		s5 -> s1 (transition: t6, action: 1)
+	L: 
+		L(s0) = {a, b, }
+		L(s1) = {a, b, c, }
+		L(s2) = {b, c, }
+		L(s3) = {a, c, }
+		L(s4) = {a, c, }
+		L(s5) = {a, b, }

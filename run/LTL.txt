@@ -1,0 +1,7 @@
+[Benchmark]
+	Global Formulas: 
+		(!(true U (!(!((!a) /\ (!b))))))
+	Local Formulas: 
+		si=1	(X(a /\ c))
+		si=2	(!Fa)
+		si=3	(c U (!a))

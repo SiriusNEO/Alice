@@ -16,33 +16,45 @@
 
 namespace alice {
 
-namespace ba {
+namespace automata {
 
-class Word {
+class Symbols {
  public:
   // for 2^AP
-  std::set<std::string> *A_;
+  std::set<std::string> A_;
 
-  explicit Word(std::set<std::string> *A) : A_(A) {}
+  explicit Symbols(const std::set<std::string> &A) : A_(A) {}
+
+  std::string toString() const {
+    std::string ret = "{";
+    for (const auto &symbol : A_) {
+      ret += symbol + ", ";
+    }
+    return ret + "}";
+  }
 };
 
 class State {
  public:
   bool is_init_;
 
+  std::string name_;
+
   // for the elementary set
+  // don't delete it in destructor because it's managed in the closure analyzer.
   std::set<ltl::LTLFormula *> *B_;
 
   // for the converted NBA
-  int number_;
+  int index_;
 
-  std::map<Word *, std::vector<State *>> delta_;
+  std::map<Symbols *, std::vector<State *>> delta_;
 
-  explicit State(std::set<ltl::LTLFormula *> *B, int number = 0)
-      : is_init_(false), number_(number), delta_() {}
+  explicit State(const std::string &name, std::set<ltl::LTLFormula *> *B,
+                 int index = 0)
+      : is_init_(false), name_(name), index_(index), delta_() {}
 };
 
-}  // namespace ba
+}  // namespace automata
 
 }  // namespace alice
 

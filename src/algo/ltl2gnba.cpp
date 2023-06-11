@@ -11,11 +11,11 @@ namespace algo {
 
 void enumerateAlphabet(std::set<std::string>::iterator it,
                        std::set<std::string>::iterator end,
-                       std::vector<ba::Word*>& alphabet) {
+                       std::vector<automata::Symbols*>& alphabet) {
   static std::vector<std::string> enumerated;
   if (it == end) {
-    alphabet.push_back(new ba::Word(
-        new std::set<std::string>(enumerated.begin(), enumerated.end())));
+    alphabet.push_back(new automata::Symbols(
+        std::set<std::string>(enumerated.begin(), enumerated.end())));
     return;
   }
 
@@ -26,8 +26,8 @@ void enumerateAlphabet(std::set<std::string>::iterator it,
   enumerateAlphabet(it, end, alphabet);
 }
 
-ba::GeneralizedBuechiAutomata* fromLTL(ltl::LTLFormula* formula) {
-  auto gnba = new ba::GeneralizedBuechiAutomata();
+automata::GeneralizedBuechiAutomata* fromLTL(ltl::LTLFormula* formula) {
+  auto gnba = new automata::GeneralizedBuechiAutomata();
 
   auto closure_analyzer = ltl::ClosureAnalyzer();
   closure_analyzer.visit(formula);
@@ -38,23 +38,28 @@ ba::GeneralizedBuechiAutomata* fromLTL(ltl::LTLFormula* formula) {
                     gnba->alphabet_);
 
   // Step 2. Construct Q, Q0 and delta.
-  std::map<std::set<alice::ltl::LTLFormula*>*, ba::State*> elem_set_to_state;
-  for (auto B : closure_analyzer.elementary_sets_) {
+  std::map<std::set<alice::ltl::LTLFormula*>*, automata::State*>
+      elem_set_to_state;
+  for (size_t i = 0; i < closure_analyzer.elementary_sets_.size(); ++i) {
+    auto B = closure_analyzer.elementary_sets_[i];
+
     // Q and Q0
-    auto state = new ba::State(B);
+    auto state = new automata::State("q" + std::to_string(i), B);
     if (B->find(formula) != B->end()) {
       gnba->init_states_.push_back(state);
+      state->is_init_ = true;
     }
     gnba->states_.push_back(state);
     elem_set_to_state[B] = state;
 
-    for (auto word : gnba->alphabet_) {
-      state->delta_[word] = std::vector<ba::State*>();
+    // init delta
+    for (const auto& symbols : gnba->alphabet_) {
+      state->delta_[symbols] = std::vector<automata::State*>();
     }
   }
 
-  // delta function
-  for (auto B : closure_analyzer.elementary_sets_) {
+  // Step 3. Compute delta function
+  for (const auto& B : closure_analyzer.elementary_sets_) {
     auto state = elem_set_to_state[B];
 
     std::set<std::string> B_and_AP;
@@ -66,17 +71,17 @@ ba::GeneralizedBuechiAutomata* fromLTL(ltl::LTLFormula* formula) {
       }
     }
 
-    ba::Word* A = nullptr;
-    for (auto word : gnba->alphabet_) {
-      if (*word->A_ == B_and_AP) {
-        A = word;
+    automata::Symbols* A = nullptr;
+    for (const auto& symbols : gnba->alphabet_) {
+      if (symbols->A_ == B_and_AP) {
+        A = symbols;
       }
     }
     CHECK(A != NULL);
 
-    for (auto B_prime : closure_analyzer.elementary_sets_) {
+    for (const auto& B_prime : closure_analyzer.elementary_sets_) {
       bool check_flag = true;
-      for (auto f : closure_analyzer.closure_) {
+      for (const auto& f : closure_analyzer.closure_) {
         // (1) Next \psi in B <=> \psi in B'
         if (utils:: instanceof <ltl::Next>(f)) {
           bool cond1 = ltl::in(f, *B);
@@ -102,17 +107,30 @@ ba::GeneralizedBuechiAutomata* fromLTL(ltl::LTLFormula* formula) {
     }
   }
 
-  // Step 3. Construct F.
-  for (auto f : closure_analyzer.closure_) {
+  // Step 4. Construct F.
+  for (const auto& f : closure_analyzer.closure_) {
     if (utils:: instanceof <ltl::Until>(f)) {
-      std::set<ba::State*> F;
-      for (auto elem_set : closure_analyzer.elementary_sets_) {
+      std::set<automata::State*> F;
+      for (const auto& elem_set : closure_analyzer.elementary_sets_) {
         if (!in(f, *elem_set) || in(f->right_son_, *elem_set)) {
           F.insert(elem_set_to_state[elem_set]);
         }
       }
       if (!F.empty()) {
         gnba->F_.push_back(std::move(F));
+      }
+    }
+  }
+
+  // Step 5. Turn to Non-Blocking.
+  if (!gnba->isNonBlocking()) {
+    automata::State* trap = new automata::State("trap", nullptr);
+    gnba->states_.push_back(trap);
+    for (const auto& state : gnba->states_) {
+      for (const auto& symbols : gnba->alphabet_) {
+        if (state->delta_[symbols].empty()) {
+          state->delta_[symbols].push_back(trap);
+        }
       }
     }
   }

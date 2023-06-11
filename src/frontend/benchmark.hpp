@@ -33,7 +33,7 @@ class Benchmark {
 
   ~Benchmark();
 
-  void print() const;
+  void show(std::ostream& os) const;
 };
 
 }  // namespace frontend

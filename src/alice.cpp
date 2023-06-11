@@ -10,29 +10,15 @@
 using namespace alice;
 
 int main() {
-  LOG(INFO) << "test ltl parser";
-  std::string input = "G(a \\/ b)";
-  ltl::TreeDeleter deleter;
-  auto root = ltl::parseLTLFromString(input);
-  std::cout << "parse result: " << ltl::toString(root) << std::endl;
-  deleter.visit(root);
+  LOG(INFO) << "Loading Transition System ...";
+  frontend::TSBuilder builder("../data/TS.txt");
+  std::ofstream file_ts("../run/TS.txt");
+  builder.get()->show(file_ts);
 
-  LOG(INFO) << "test ts builder";
-  frontend::TSBuilder builder("../ref/example_TS.txt");
-  builder.get()->print();
-
-  LOG(INFO) << "test ts benchmark";
-  frontend::Benchmark benchmark("../ref/example_LTL.txt");
-  benchmark.print();
-
-  LOG(INFO) << "test closure analyzer";
-  std::string input1 = "a U ((!a) /\\ b)";
-  auto root1 = ltl::parseLTLFromString(input1);
-  std::cout << "parse result: " << ltl::toString(root1) << std::endl;
-  ltl::ClosureAnalyzer analyzer;
-  analyzer.visit(root1);
-  analyzer.getElementarySet();
-  analyzer.show();
+  LOG(INFO) << "Loading LTL Benchmark ...";
+  frontend::Benchmark benchmark("../data/LTL.txt");
+  std::ofstream file_ltl("../run/LTL.txt");
+  benchmark.show(file_ltl);
 
   return 0;
 }

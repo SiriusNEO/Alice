@@ -22,34 +22,33 @@ bool ClosureAnalyzer::inEnumerated(LTLFormula* formula) {
   return in(formula, enumerated_);
 }
 
-void ClosureAnalyzer::show() {
-  std::cout << "[Closure Analyzer]" << std::endl;
+void ClosureAnalyzer::show(std::ostream& os) const {
+  os << "[Closure Analyzer]" << std::endl;
 
   // show has true
-  std::cout << "\tHas True: ";
+  os << "\tHas True: ";
   if (has_true_) {
-    std::cout << "True\n";
+    os << "True\n";
   } else {
-    std::cout << "False\n";
+    os << "False\n";
   }
 
   // show closure
-  std::cout << "\tClosure: {\n";
-  for (auto formula : closure_) {
-    std::cout << "\t\t" << toString(formula) << ", \n";
+  os << "\tClosure: {\n";
+  for (const auto& formula : closure_) {
+    os << "\t\t" << toString(formula) << ", \n";
   }
-  std::cout << "\t}" << std::endl;
+  os << "\t}" << std::endl;
 
   // show elementary
-  std::cout << "\tElementary Sets: \n";
+  os << "\tElementary Sets: \n";
   int counter = 1;
-  for (auto elem_set : elementary_sets_) {
-    std::cout << "\t\tB" << counter << "={";
-    for (auto formula = elem_set->begin(); formula != elem_set->end();
-         formula++) {
-      std::cout << toString(*formula) << ", ";
+  for (const auto& elem_set : elementary_sets_) {
+    os << "\t\tB" << counter << "={";
+    for (const auto& formula : *elem_set) {
+      os << toString(formula) << ", ";
     }
-    std::cout << "}\n";
+    os << "}" << std::endl;
     counter++;
   }
 }
@@ -71,7 +70,7 @@ void ClosureAnalyzer::enumerateAndCheckElementarySet(int depth) {
     // 1. propositional logic: True
     if (has_true_) {
       check_flag = false;
-      for (auto f : enumerated_) {
+      for (const auto& f : enumerated_) {
         if (has_true_ && utils:: instanceof <True>(f)) {
           check_flag = true;
           break;
@@ -79,7 +78,7 @@ void ClosureAnalyzer::enumerateAndCheckElementarySet(int depth) {
       }
     }
 
-    for (auto f : closure_) {
+    for (const auto& f : closure_) {
       // 2. propositional logic: Conjunction
       if (utils:: instanceof <Conjunction>(f)) {
         bool cond1 = inEnumerated(f);

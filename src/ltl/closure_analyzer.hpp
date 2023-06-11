@@ -32,7 +32,7 @@ class ClosureAnalyzer : public LTLVisitor {
 
   void getElementarySet();
 
-  void show();
+  void show(std::ostream& os) const;
 
   virtual void _visit(Negation* node) override;
 

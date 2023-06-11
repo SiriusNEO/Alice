@@ -37,7 +37,7 @@ Benchmark::Benchmark(const char* file_path)
   for (int i = 0, si; i < B; ++i) {
     file_in_ >> si;
     getline(file_in_, buffer);
-    LOG(INFO) << buffer;
+    // LOG(INFO) << buffer;
     local_formulas_.push_back(
         std::make_pair(si, ltl::parseLTLFromString(buffer)));
     buffer.clear();
@@ -46,8 +46,8 @@ Benchmark::Benchmark(const char* file_path)
 
 Benchmark::~Benchmark() {
   auto deleter = ltl::TreeDeleter();
-  for (auto formula : global_formulas_) deleter.visit(formula);
-  for (auto formula : local_formulas_) deleter.visit(formula.second);
+  for (const auto& formula : global_formulas_) deleter.visit(formula);
+  for (const auto& formula : local_formulas_) deleter.visit(formula.second);
 }
 
 ltl::LTLFormula* Benchmark::next_glb() {
@@ -58,20 +58,19 @@ std::pair<int, ltl::LTLFormula*> Benchmark::next_loc() {
   return local_formulas_[loc_cursor_++];
 }
 
-void Benchmark::print() const {
-  std::cout << "[Benchmark]" << std::endl;
+void Benchmark::show(std::ostream& os) const {
+  os << "[Benchmark]" << std::endl;
 
   // print global formulas
-  std::cout << "\tGlobal Formulas: " << std::endl;
-  for (auto f : global_formulas_) {
-    std::cout << "\t\t" << toString(f) << std::endl;
+  os << "\tGlobal Formulas: " << std::endl;
+  for (const auto& f : global_formulas_) {
+    os << "\t\t" << toString(f) << std::endl;
   }
 
   // print local formulas
-  std::cout << "\tLocal Formulas: " << std::endl;
-  for (auto p : local_formulas_) {
-    std::cout << "\t\tsi=" << p.first << "\t" << toString(p.second)
-              << std::endl;
+  os << "\tLocal Formulas: " << std::endl;
+  for (const auto& p : local_formulas_) {
+    os << "\t\tsi=" << p.first << "\t" << toString(p.second) << std::endl;
   }
 }
 
