@@ -11,12 +11,14 @@ set(TEST_FILE ${SRC_DIR}/alice_test.cpp)
 
 file(GLOB_RECURSE SOURCES ${SRC_DIR}/ltl/*.cpp
                           ${SRC_DIR}/frontend/*.cpp
-                          ${SRC_DIR}/ts/*.cpp)
+                          ${SRC_DIR}/ts/*.cpp
+                          ${SRC_DIR}/automata/*.cpp
+                          ${SRC_DIR}/algo/*.cpp)
 
 ######################## Target ########################
 
 add_executable(${PROJECT_NAME} ${SOURCES} ${ENTRY_FILE})
-target_compile_options(${PROJECT_NAME} PUBLIC -O2)
+target_compile_options(${PROJECT_NAME} PUBLIC -O2 -g)
 target_include_directories(${PROJECT_NAME} PUBLIC ${SRC_DIR})
 
 ######################## Test ########################

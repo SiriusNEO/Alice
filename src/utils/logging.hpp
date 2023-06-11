@@ -79,7 +79,8 @@ class LogMessage {
       // std::cerr << info.str();
       throw AlicePanic(file_, lineno_, stream_.str());
     } else {
-      std::cout << info.str();
+      // colored log
+      std::cerr << "\033[34m" << info.str() << "\033[0m";
     }
   }
 

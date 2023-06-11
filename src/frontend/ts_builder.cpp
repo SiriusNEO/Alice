@@ -39,7 +39,7 @@ TSBuilder::TSBuilder(const char* file_path) : file_in_() {
     while (ss >> init_state_id) {
       CHECK(init_state_id >= 0);
       CHECK(init_state_id < ts_->states_.size());
-      ts_->init_states_.push_back(ts_->states_[init_state_id]);
+      ts_->init_states_.insert(ts_->states_[init_state_id]);
       ts_->states_[init_state_id]->is_init_ = true;
     }
     buffer.clear();
@@ -72,10 +72,7 @@ TSBuilder::TSBuilder(const char* file_path) : file_in_() {
     file_in_ >> i >> k >> j;
 
     ts::Transition* t = ts_->transitions_[l];
-    t->from_ = ts_->states_[i];
-    t->to_ = ts_->states_[j];
-    t->action_ = ts_->actions_[k];
-    t->from_->out_edges_.push_back(t);
+    ts_->link(ts_->states_[i], ts_->states_[j], t, ts_->actions_[k]);
   }
 
   // 6. next S lines

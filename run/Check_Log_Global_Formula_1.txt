@@ -1,0 +1,1096 @@
+[Closure Analyzer]
+	Has True: True
+	Closure: {
+		(true U (!(!((!a) /\ (!b))))), 
+		(!(true U (!(!((!a) /\ (!b)))))), 
+		true, 
+		(!true), 
+		((!a) /\ (!b)), 
+		(!((!a) /\ (!b))), 
+		a, 
+		(!a), 
+		b, 
+		(!b), 
+		c, 
+		(!c), 
+	}
+	Elementary Sets: 
+		B1 = {true, (!(true U (!(!((!a) /\ (!b)))))), (!((!a) /\ (!b))), (!a), b, (!c), }
+		B2 = {true, (!(true U (!(!((!a) /\ (!b)))))), (!((!a) /\ (!b))), (!a), b, c, }
+		B3 = {true, (!(true U (!(!((!a) /\ (!b)))))), (!((!a) /\ (!b))), a, (!b), (!c), }
+		B4 = {true, (!(true U (!(!((!a) /\ (!b)))))), (!((!a) /\ (!b))), a, (!b), c, }
+		B5 = {true, (!(true U (!(!((!a) /\ (!b)))))), (!((!a) /\ (!b))), a, b, (!c), }
+		B6 = {true, (!(true U (!(!((!a) /\ (!b)))))), (!((!a) /\ (!b))), a, b, c, }
+		B7 = {((!a) /\ (!b)), true, (!(true U (!(!((!a) /\ (!b)))))), (!a), (!b), (!c), }
+		B8 = {((!a) /\ (!b)), true, (!(true U (!(!((!a) /\ (!b)))))), (!a), (!b), c, }
+		B9 = {true, (true U (!(!((!a) /\ (!b))))), (!((!a) /\ (!b))), (!a), b, (!c), }
+		B10 = {true, (true U (!(!((!a) /\ (!b))))), (!((!a) /\ (!b))), (!a), b, c, }
+		B11 = {true, (true U (!(!((!a) /\ (!b))))), (!((!a) /\ (!b))), a, (!b), (!c), }
+		B12 = {true, (true U (!(!((!a) /\ (!b))))), (!((!a) /\ (!b))), a, (!b), c, }
+		B13 = {true, (true U (!(!((!a) /\ (!b))))), (!((!a) /\ (!b))), a, b, (!c), }
+		B14 = {true, (true U (!(!((!a) /\ (!b))))), (!((!a) /\ (!b))), a, b, c, }
+		B15 = {((!a) /\ (!b)), true, (true U (!(!((!a) /\ (!b))))), (!a), (!b), (!c), }
+		B16 = {((!a) /\ (!b)), true, (true U (!(!((!a) /\ (!b))))), (!a), (!b), c, }
+
+[Generalized Buechi Automata]
+	Is NonBlocking: True
+	States: 
+		q0 = {true, (!(true U (!(!((!a) /\ (!b)))))), (!((!a) /\ (!b))), (!a), b, (!c), }
+		q1 = {true, (!(true U (!(!((!a) /\ (!b)))))), (!((!a) /\ (!b))), (!a), b, c, }
+		q2 = {true, (!(true U (!(!((!a) /\ (!b)))))), (!((!a) /\ (!b))), a, (!b), (!c), }
+		q3 = {true, (!(true U (!(!((!a) /\ (!b)))))), (!((!a) /\ (!b))), a, (!b), c, }
+		q4 = {true, (!(true U (!(!((!a) /\ (!b)))))), (!((!a) /\ (!b))), a, b, (!c), }
+		q5 = {true, (!(true U (!(!((!a) /\ (!b)))))), (!((!a) /\ (!b))), a, b, c, }
+		q6 = {((!a) /\ (!b)), true, (!(true U (!(!((!a) /\ (!b)))))), (!a), (!b), (!c), }
+		q7 = {((!a) /\ (!b)), true, (!(true U (!(!((!a) /\ (!b)))))), (!a), (!b), c, }
+		q8 = {true, (true U (!(!((!a) /\ (!b))))), (!((!a) /\ (!b))), (!a), b, (!c), }
+		q9 = {true, (true U (!(!((!a) /\ (!b))))), (!((!a) /\ (!b))), (!a), b, c, }
+		q10 = {true, (true U (!(!((!a) /\ (!b))))), (!((!a) /\ (!b))), a, (!b), (!c), }
+		q11 = {true, (true U (!(!((!a) /\ (!b))))), (!((!a) /\ (!b))), a, (!b), c, }
+		q12 = {true, (true U (!(!((!a) /\ (!b))))), (!((!a) /\ (!b))), a, b, (!c), }
+		q13 = {true, (true U (!(!((!a) /\ (!b))))), (!((!a) /\ (!b))), a, b, c, }
+		q14 = {((!a) /\ (!b)), true, (true U (!(!((!a) /\ (!b))))), (!a), (!b), (!c), }
+		q15 = {((!a) /\ (!b)), true, (true U (!(!((!a) /\ (!b))))), (!a), (!b), c, }
+		trap = {}
+	Initial States: {q8, q9, q10, q11, q12, q13, q14, q15, }
+	Alphabet: 
+		{a, b, c, }
+		{a, b, }
+		{a, c, }
+		{a, }
+		{b, c, }
+		{b, }
+		{c, }
+		{}
+	Delta: 
+		q0 -> trap (symbols: {a, b, c, })
+		q0 -> trap (symbols: {a, b, })
+		q0 -> trap (symbols: {a, c, })
+		q0 -> trap (symbols: {a, })
+		q0 -> trap (symbols: {b, c, })
+		q0 -> q0 (symbols: {b, })
+		q0 -> q1 (symbols: {b, })
+		q0 -> q2 (symbols: {b, })
+		q0 -> q3 (symbols: {b, })
+		q0 -> q4 (symbols: {b, })
+		q0 -> q5 (symbols: {b, })
+		q0 -> q6 (symbols: {b, })
+		q0 -> q7 (symbols: {b, })
+		q0 -> trap (symbols: {c, })
+		q0 -> trap (symbols: {})
+		q1 -> trap (symbols: {a, b, c, })
+		q1 -> trap (symbols: {a, b, })
+		q1 -> trap (symbols: {a, c, })
+		q1 -> trap (symbols: {a, })
+		q1 -> q0 (symbols: {b, c, })
+		q1 -> q1 (symbols: {b, c, })
+		q1 -> q2 (symbols: {b, c, })
+		q1 -> q3 (symbols: {b, c, })
+		q1 -> q4 (symbols: {b, c, })
+		q1 -> q5 (symbols: {b, c, })
+		q1 -> q6 (symbols: {b, c, })
+		q1 -> q7 (symbols: {b, c, })
+		q1 -> trap (symbols: {b, })
+		q1 -> trap (symbols: {c, })
+		q1 -> trap (symbols: {})
+		q2 -> trap (symbols: {a, b, c, })
+		q2 -> trap (symbols: {a, b, })
+		q2 -> trap (symbols: {a, c, })
+		q2 -> q0 (symbols: {a, })
+		q2 -> q1 (symbols: {a, })
+		q2 -> q2 (symbols: {a, })
+		q2 -> q3 (symbols: {a, })
+		q2 -> q4 (symbols: {a, })
+		q2 -> q5 (symbols: {a, })
+		q2 -> q6 (symbols: {a, })
+		q2 -> q7 (symbols: {a, })
+		q2 -> trap (symbols: {b, c, })
+		q2 -> trap (symbols: {b, })
+		q2 -> trap (symbols: {c, })
+		q2 -> trap (symbols: {})
+		q3 -> trap (symbols: {a, b, c, })
+		q3 -> trap (symbols: {a, b, })
+		q3 -> q0 (symbols: {a, c, })
+		q3 -> q1 (symbols: {a, c, })
+		q3 -> q2 (symbols: {a, c, })
+		q3 -> q3 (symbols: {a, c, })
+		q3 -> q4 (symbols: {a, c, })
+		q3 -> q5 (symbols: {a, c, })
+		q3 -> q6 (symbols: {a, c, })
+		q3 -> q7 (symbols: {a, c, })
+		q3 -> trap (symbols: {a, })
+		q3 -> trap (symbols: {b, c, })
+		q3 -> trap (symbols: {b, })
+		q3 -> trap (symbols: {c, })
+		q3 -> trap (symbols: {})
+		q4 -> trap (symbols: {a, b, c, })
+		q4 -> q0 (symbols: {a, b, })
+		q4 -> q1 (symbols: {a, b, })
+		q4 -> q2 (symbols: {a, b, })
+		q4 -> q3 (symbols: {a, b, })
+		q4 -> q4 (symbols: {a, b, })
+		q4 -> q5 (symbols: {a, b, })
+		q4 -> q6 (symbols: {a, b, })
+		q4 -> q7 (symbols: {a, b, })
+		q4 -> trap (symbols: {a, c, })
+		q4 -> trap (symbols: {a, })
+		q4 -> trap (symbols: {b, c, })
+		q4 -> trap (symbols: {b, })
+		q4 -> trap (symbols: {c, })
+		q4 -> trap (symbols: {})
+		q5 -> q0 (symbols: {a, b, c, })
+		q5 -> q1 (symbols: {a, b, c, })
+		q5 -> q2 (symbols: {a, b, c, })
+		q5 -> q3 (symbols: {a, b, c, })
+		q5 -> q4 (symbols: {a, b, c, })
+		q5 -> q5 (symbols: {a, b, c, })
+		q5 -> q6 (symbols: {a, b, c, })
+		q5 -> q7 (symbols: {a, b, c, })
+		q5 -> trap (symbols: {a, b, })
+		q5 -> trap (symbols: {a, c, })
+		q5 -> trap (symbols: {a, })
+		q5 -> trap (symbols: {b, c, })
+		q5 -> trap (symbols: {b, })
+		q5 -> trap (symbols: {c, })
+		q5 -> trap (symbols: {})
+		q6 -> trap (symbols: {a, b, c, })
+		q6 -> trap (symbols: {a, b, })
+		q6 -> trap (symbols: {a, c, })
+		q6 -> trap (symbols: {a, })
+		q6 -> trap (symbols: {b, c, })
+		q6 -> trap (symbols: {b, })
+		q6 -> trap (symbols: {c, })
+		q6 -> q0 (symbols: {})
+		q6 -> q1 (symbols: {})
+		q6 -> q2 (symbols: {})
+		q6 -> q3 (symbols: {})
+		q6 -> q4 (symbols: {})
+		q6 -> q5 (symbols: {})
+		q6 -> q6 (symbols: {})
+		q6 -> q7 (symbols: {})
+		q7 -> trap (symbols: {a, b, c, })
+		q7 -> trap (symbols: {a, b, })
+		q7 -> trap (symbols: {a, c, })
+		q7 -> trap (symbols: {a, })
+		q7 -> trap (symbols: {b, c, })
+		q7 -> trap (symbols: {b, })
+		q7 -> q0 (symbols: {c, })
+		q7 -> q1 (symbols: {c, })
+		q7 -> q2 (symbols: {c, })
+		q7 -> q3 (symbols: {c, })
+		q7 -> q4 (symbols: {c, })
+		q7 -> q5 (symbols: {c, })
+		q7 -> q6 (symbols: {c, })
+		q7 -> q7 (symbols: {c, })
+		q7 -> trap (symbols: {})
+		q8 -> trap (symbols: {a, b, c, })
+		q8 -> trap (symbols: {a, b, })
+		q8 -> trap (symbols: {a, c, })
+		q8 -> trap (symbols: {a, })
+		q8 -> trap (symbols: {b, c, })
+		q8 -> q8 (symbols: {b, })
+		q8 -> q9 (symbols: {b, })
+		q8 -> q10 (symbols: {b, })
+		q8 -> q11 (symbols: {b, })
+		q8 -> q12 (symbols: {b, })
+		q8 -> q13 (symbols: {b, })
+		q8 -> q14 (symbols: {b, })
+		q8 -> q15 (symbols: {b, })
+		q8 -> trap (symbols: {c, })
+		q8 -> trap (symbols: {})
+		q9 -> trap (symbols: {a, b, c, })
+		q9 -> trap (symbols: {a, b, })
+		q9 -> trap (symbols: {a, c, })
+		q9 -> trap (symbols: {a, })
+		q9 -> q8 (symbols: {b, c, })
+		q9 -> q9 (symbols: {b, c, })
+		q9 -> q10 (symbols: {b, c, })
+		q9 -> q11 (symbols: {b, c, })
+		q9 -> q12 (symbols: {b, c, })
+		q9 -> q13 (symbols: {b, c, })
+		q9 -> q14 (symbols: {b, c, })
+		q9 -> q15 (symbols: {b, c, })
+		q9 -> trap (symbols: {b, })
+		q9 -> trap (symbols: {c, })
+		q9 -> trap (symbols: {})
+		q10 -> trap (symbols: {a, b, c, })
+		q10 -> trap (symbols: {a, b, })
+		q10 -> trap (symbols: {a, c, })
+		q10 -> q8 (symbols: {a, })
+		q10 -> q9 (symbols: {a, })
+		q10 -> q10 (symbols: {a, })
+		q10 -> q11 (symbols: {a, })
+		q10 -> q12 (symbols: {a, })
+		q10 -> q13 (symbols: {a, })
+		q10 -> q14 (symbols: {a, })
+		q10 -> q15 (symbols: {a, })
+		q10 -> trap (symbols: {b, c, })
+		q10 -> trap (symbols: {b, })
+		q10 -> trap (symbols: {c, })
+		q10 -> trap (symbols: {})
+		q11 -> trap (symbols: {a, b, c, })
+		q11 -> trap (symbols: {a, b, })
+		q11 -> q8 (symbols: {a, c, })
+		q11 -> q9 (symbols: {a, c, })
+		q11 -> q10 (symbols: {a, c, })
+		q11 -> q11 (symbols: {a, c, })
+		q11 -> q12 (symbols: {a, c, })
+		q11 -> q13 (symbols: {a, c, })
+		q11 -> q14 (symbols: {a, c, })
+		q11 -> q15 (symbols: {a, c, })
+		q11 -> trap (symbols: {a, })
+		q11 -> trap (symbols: {b, c, })
+		q11 -> trap (symbols: {b, })
+		q11 -> trap (symbols: {c, })
+		q11 -> trap (symbols: {})
+		q12 -> trap (symbols: {a, b, c, })
+		q12 -> q8 (symbols: {a, b, })
+		q12 -> q9 (symbols: {a, b, })
+		q12 -> q10 (symbols: {a, b, })
+		q12 -> q11 (symbols: {a, b, })
+		q12 -> q12 (symbols: {a, b, })
+		q12 -> q13 (symbols: {a, b, })
+		q12 -> q14 (symbols: {a, b, })
+		q12 -> q15 (symbols: {a, b, })
+		q12 -> trap (symbols: {a, c, })
+		q12 -> trap (symbols: {a, })
+		q12 -> trap (symbols: {b, c, })
+		q12 -> trap (symbols: {b, })
+		q12 -> trap (symbols: {c, })
+		q12 -> trap (symbols: {})
+		q13 -> q8 (symbols: {a, b, c, })
+		q13 -> q9 (symbols: {a, b, c, })
+		q13 -> q10 (symbols: {a, b, c, })
+		q13 -> q11 (symbols: {a, b, c, })
+		q13 -> q12 (symbols: {a, b, c, })
+		q13 -> q13 (symbols: {a, b, c, })
+		q13 -> q14 (symbols: {a, b, c, })
+		q13 -> q15 (symbols: {a, b, c, })
+		q13 -> trap (symbols: {a, b, })
+		q13 -> trap (symbols: {a, c, })
+		q13 -> trap (symbols: {a, })
+		q13 -> trap (symbols: {b, c, })
+		q13 -> trap (symbols: {b, })
+		q13 -> trap (symbols: {c, })
+		q13 -> trap (symbols: {})
+		q14 -> trap (symbols: {a, b, c, })
+		q14 -> trap (symbols: {a, b, })
+		q14 -> trap (symbols: {a, c, })
+		q14 -> trap (symbols: {a, })
+		q14 -> trap (symbols: {b, c, })
+		q14 -> trap (symbols: {b, })
+		q14 -> trap (symbols: {c, })
+		q14 -> q8 (symbols: {})
+		q14 -> q9 (symbols: {})
+		q14 -> q10 (symbols: {})
+		q14 -> q11 (symbols: {})
+		q14 -> q12 (symbols: {})
+		q14 -> q13 (symbols: {})
+		q14 -> q14 (symbols: {})
+		q14 -> q15 (symbols: {})
+		q15 -> trap (symbols: {a, b, c, })
+		q15 -> trap (symbols: {a, b, })
+		q15 -> trap (symbols: {a, c, })
+		q15 -> trap (symbols: {a, })
+		q15 -> trap (symbols: {b, c, })
+		q15 -> trap (symbols: {b, })
+		q15 -> q8 (symbols: {c, })
+		q15 -> q9 (symbols: {c, })
+		q15 -> q10 (symbols: {c, })
+		q15 -> q11 (symbols: {c, })
+		q15 -> q12 (symbols: {c, })
+		q15 -> q13 (symbols: {c, })
+		q15 -> q14 (symbols: {c, })
+		q15 -> q15 (symbols: {c, })
+		q15 -> trap (symbols: {})
+		trap -> trap (symbols: {a, b, c, })
+		trap -> trap (symbols: {a, b, })
+		trap -> trap (symbols: {a, c, })
+		trap -> trap (symbols: {a, })
+		trap -> trap (symbols: {b, c, })
+		trap -> trap (symbols: {b, })
+		trap -> trap (symbols: {c, })
+		trap -> trap (symbols: {})
+	F: 
+		{q0, q1, q2, q3, q4, q5, q6, q7, }
+
+[Nondeterministic Buechi Automata]
+	Is NonBlocking: True
+	States: 
+		<q0, 1> = {true, (!(true U (!(!((!a) /\ (!b)))))), (!((!a) /\ (!b))), (!a), b, (!c), }
+		<q1, 1> = {true, (!(true U (!(!((!a) /\ (!b)))))), (!((!a) /\ (!b))), (!a), b, c, }
+		<q2, 1> = {true, (!(true U (!(!((!a) /\ (!b)))))), (!((!a) /\ (!b))), a, (!b), (!c), }
+		<q3, 1> = {true, (!(true U (!(!((!a) /\ (!b)))))), (!((!a) /\ (!b))), a, (!b), c, }
+		<q4, 1> = {true, (!(true U (!(!((!a) /\ (!b)))))), (!((!a) /\ (!b))), a, b, (!c), }
+		<q5, 1> = {true, (!(true U (!(!((!a) /\ (!b)))))), (!((!a) /\ (!b))), a, b, c, }
+		<q6, 1> = {((!a) /\ (!b)), true, (!(true U (!(!((!a) /\ (!b)))))), (!a), (!b), (!c), }
+		<q7, 1> = {((!a) /\ (!b)), true, (!(true U (!(!((!a) /\ (!b)))))), (!a), (!b), c, }
+		<q8, 1> = {true, (true U (!(!((!a) /\ (!b))))), (!((!a) /\ (!b))), (!a), b, (!c), }
+		<q9, 1> = {true, (true U (!(!((!a) /\ (!b))))), (!((!a) /\ (!b))), (!a), b, c, }
+		<q10, 1> = {true, (true U (!(!((!a) /\ (!b))))), (!((!a) /\ (!b))), a, (!b), (!c), }
+		<q11, 1> = {true, (true U (!(!((!a) /\ (!b))))), (!((!a) /\ (!b))), a, (!b), c, }
+		<q12, 1> = {true, (true U (!(!((!a) /\ (!b))))), (!((!a) /\ (!b))), a, b, (!c), }
+		<q13, 1> = {true, (true U (!(!((!a) /\ (!b))))), (!((!a) /\ (!b))), a, b, c, }
+		<q14, 1> = {((!a) /\ (!b)), true, (true U (!(!((!a) /\ (!b))))), (!a), (!b), (!c), }
+		<q15, 1> = {((!a) /\ (!b)), true, (true U (!(!((!a) /\ (!b))))), (!a), (!b), c, }
+		<trap, 1> = {}
+	Initial States: {<q8, 1>, <q9, 1>, <q10, 1>, <q11, 1>, <q12, 1>, <q13, 1>, <q14, 1>, <q15, 1>, }
+	Alphabet: 
+		{a, b, c, }
+		{a, b, }
+		{a, c, }
+		{a, }
+		{b, c, }
+		{b, }
+		{c, }
+		{}
+	Delta: 
+		<q0, 1> -> <trap, 1> (symbols: {a, b, c, })
+		<q0, 1> -> <trap, 1> (symbols: {a, b, })
+		<q0, 1> -> <trap, 1> (symbols: {a, c, })
+		<q0, 1> -> <trap, 1> (symbols: {a, })
+		<q0, 1> -> <trap, 1> (symbols: {b, c, })
+		<q0, 1> -> <q0, 1> (symbols: {b, })
+		<q0, 1> -> <q1, 1> (symbols: {b, })
+		<q0, 1> -> <q2, 1> (symbols: {b, })
+		<q0, 1> -> <q3, 1> (symbols: {b, })
+		<q0, 1> -> <q4, 1> (symbols: {b, })
+		<q0, 1> -> <q5, 1> (symbols: {b, })
+		<q0, 1> -> <q6, 1> (symbols: {b, })
+		<q0, 1> -> <q7, 1> (symbols: {b, })
+		<q0, 1> -> <trap, 1> (symbols: {c, })
+		<q0, 1> -> <trap, 1> (symbols: {})
+		<q1, 1> -> <trap, 1> (symbols: {a, b, c, })
+		<q1, 1> -> <trap, 1> (symbols: {a, b, })
+		<q1, 1> -> <trap, 1> (symbols: {a, c, })
+		<q1, 1> -> <trap, 1> (symbols: {a, })
+		<q1, 1> -> <q0, 1> (symbols: {b, c, })
+		<q1, 1> -> <q1, 1> (symbols: {b, c, })
+		<q1, 1> -> <q2, 1> (symbols: {b, c, })
+		<q1, 1> -> <q3, 1> (symbols: {b, c, })
+		<q1, 1> -> <q4, 1> (symbols: {b, c, })
+		<q1, 1> -> <q5, 1> (symbols: {b, c, })
+		<q1, 1> -> <q6, 1> (symbols: {b, c, })
+		<q1, 1> -> <q7, 1> (symbols: {b, c, })
+		<q1, 1> -> <trap, 1> (symbols: {b, })
+		<q1, 1> -> <trap, 1> (symbols: {c, })
+		<q1, 1> -> <trap, 1> (symbols: {})
+		<q2, 1> -> <trap, 1> (symbols: {a, b, c, })
+		<q2, 1> -> <trap, 1> (symbols: {a, b, })
+		<q2, 1> -> <trap, 1> (symbols: {a, c, })
+		<q2, 1> -> <q0, 1> (symbols: {a, })
+		<q2, 1> -> <q1, 1> (symbols: {a, })
+		<q2, 1> -> <q2, 1> (symbols: {a, })
+		<q2, 1> -> <q3, 1> (symbols: {a, })
+		<q2, 1> -> <q4, 1> (symbols: {a, })
+		<q2, 1> -> <q5, 1> (symbols: {a, })
+		<q2, 1> -> <q6, 1> (symbols: {a, })
+		<q2, 1> -> <q7, 1> (symbols: {a, })
+		<q2, 1> -> <trap, 1> (symbols: {b, c, })
+		<q2, 1> -> <trap, 1> (symbols: {b, })
+		<q2, 1> -> <trap, 1> (symbols: {c, })
+		<q2, 1> -> <trap, 1> (symbols: {})
+		<q3, 1> -> <trap, 1> (symbols: {a, b, c, })
+		<q3, 1> -> <trap, 1> (symbols: {a, b, })
+		<q3, 1> -> <q0, 1> (symbols: {a, c, })
+		<q3, 1> -> <q1, 1> (symbols: {a, c, })
+		<q3, 1> -> <q2, 1> (symbols: {a, c, })
+		<q3, 1> -> <q3, 1> (symbols: {a, c, })
+		<q3, 1> -> <q4, 1> (symbols: {a, c, })
+		<q3, 1> -> <q5, 1> (symbols: {a, c, })
+		<q3, 1> -> <q6, 1> (symbols: {a, c, })
+		<q3, 1> -> <q7, 1> (symbols: {a, c, })
+		<q3, 1> -> <trap, 1> (symbols: {a, })
+		<q3, 1> -> <trap, 1> (symbols: {b, c, })
+		<q3, 1> -> <trap, 1> (symbols: {b, })
+		<q3, 1> -> <trap, 1> (symbols: {c, })
+		<q3, 1> -> <trap, 1> (symbols: {})
+		<q4, 1> -> <trap, 1> (symbols: {a, b, c, })
+		<q4, 1> -> <q0, 1> (symbols: {a, b, })
+		<q4, 1> -> <q1, 1> (symbols: {a, b, })
+		<q4, 1> -> <q2, 1> (symbols: {a, b, })
+		<q4, 1> -> <q3, 1> (symbols: {a, b, })
+		<q4, 1> -> <q4, 1> (symbols: {a, b, })
+		<q4, 1> -> <q5, 1> (symbols: {a, b, })
+		<q4, 1> -> <q6, 1> (symbols: {a, b, })
+		<q4, 1> -> <q7, 1> (symbols: {a, b, })
+		<q4, 1> -> <trap, 1> (symbols: {a, c, })
+		<q4, 1> -> <trap, 1> (symbols: {a, })
+		<q4, 1> -> <trap, 1> (symbols: {b, c, })
+		<q4, 1> -> <trap, 1> (symbols: {b, })
+		<q4, 1> -> <trap, 1> (symbols: {c, })
+		<q4, 1> -> <trap, 1> (symbols: {})
+		<q5, 1> -> <q0, 1> (symbols: {a, b, c, })
+		<q5, 1> -> <q1, 1> (symbols: {a, b, c, })
+		<q5, 1> -> <q2, 1> (symbols: {a, b, c, })
+		<q5, 1> -> <q3, 1> (symbols: {a, b, c, })
+		<q5, 1> -> <q4, 1> (symbols: {a, b, c, })
+		<q5, 1> -> <q5, 1> (symbols: {a, b, c, })
+		<q5, 1> -> <q6, 1> (symbols: {a, b, c, })
+		<q5, 1> -> <q7, 1> (symbols: {a, b, c, })
+		<q5, 1> -> <trap, 1> (symbols: {a, b, })
+		<q5, 1> -> <trap, 1> (symbols: {a, c, })
+		<q5, 1> -> <trap, 1> (symbols: {a, })
+		<q5, 1> -> <trap, 1> (symbols: {b, c, })
+		<q5, 1> -> <trap, 1> (symbols: {b, })
+		<q5, 1> -> <trap, 1> (symbols: {c, })
+		<q5, 1> -> <trap, 1> (symbols: {})
+		<q6, 1> -> <trap, 1> (symbols: {a, b, c, })
+		<q6, 1> -> <trap, 1> (symbols: {a, b, })
+		<q6, 1> -> <trap, 1> (symbols: {a, c, })
+		<q6, 1> -> <trap, 1> (symbols: {a, })
+		<q6, 1> -> <trap, 1> (symbols: {b, c, })
+		<q6, 1> -> <trap, 1> (symbols: {b, })
+		<q6, 1> -> <trap, 1> (symbols: {c, })
+		<q6, 1> -> <q0, 1> (symbols: {})
+		<q6, 1> -> <q1, 1> (symbols: {})
+		<q6, 1> -> <q2, 1> (symbols: {})
+		<q6, 1> -> <q3, 1> (symbols: {})
+		<q6, 1> -> <q4, 1> (symbols: {})
+		<q6, 1> -> <q5, 1> (symbols: {})
+		<q6, 1> -> <q6, 1> (symbols: {})
+		<q6, 1> -> <q7, 1> (symbols: {})
+		<q7, 1> -> <trap, 1> (symbols: {a, b, c, })
+		<q7, 1> -> <trap, 1> (symbols: {a, b, })
+		<q7, 1> -> <trap, 1> (symbols: {a, c, })
+		<q7, 1> -> <trap, 1> (symbols: {a, })
+		<q7, 1> -> <trap, 1> (symbols: {b, c, })
+		<q7, 1> -> <trap, 1> (symbols: {b, })
+		<q7, 1> -> <q0, 1> (symbols: {c, })
+		<q7, 1> -> <q1, 1> (symbols: {c, })
+		<q7, 1> -> <q2, 1> (symbols: {c, })
+		<q7, 1> -> <q3, 1> (symbols: {c, })
+		<q7, 1> -> <q4, 1> (symbols: {c, })
+		<q7, 1> -> <q5, 1> (symbols: {c, })
+		<q7, 1> -> <q6, 1> (symbols: {c, })
+		<q7, 1> -> <q7, 1> (symbols: {c, })
+		<q7, 1> -> <trap, 1> (symbols: {})
+		<q8, 1> -> <trap, 1> (symbols: {a, b, c, })
+		<q8, 1> -> <trap, 1> (symbols: {a, b, })
+		<q8, 1> -> <trap, 1> (symbols: {a, c, })
+		<q8, 1> -> <trap, 1> (symbols: {a, })
+		<q8, 1> -> <trap, 1> (symbols: {b, c, })
+		<q8, 1> -> <q8, 1> (symbols: {b, })
+		<q8, 1> -> <q9, 1> (symbols: {b, })
+		<q8, 1> -> <q10, 1> (symbols: {b, })
+		<q8, 1> -> <q11, 1> (symbols: {b, })
+		<q8, 1> -> <q12, 1> (symbols: {b, })
+		<q8, 1> -> <q13, 1> (symbols: {b, })
+		<q8, 1> -> <q14, 1> (symbols: {b, })
+		<q8, 1> -> <q15, 1> (symbols: {b, })
+		<q8, 1> -> <trap, 1> (symbols: {c, })
+		<q8, 1> -> <trap, 1> (symbols: {})
+		<q9, 1> -> <trap, 1> (symbols: {a, b, c, })
+		<q9, 1> -> <trap, 1> (symbols: {a, b, })
+		<q9, 1> -> <trap, 1> (symbols: {a, c, })
+		<q9, 1> -> <trap, 1> (symbols: {a, })
+		<q9, 1> -> <q8, 1> (symbols: {b, c, })
+		<q9, 1> -> <q9, 1> (symbols: {b, c, })
+		<q9, 1> -> <q10, 1> (symbols: {b, c, })
+		<q9, 1> -> <q11, 1> (symbols: {b, c, })
+		<q9, 1> -> <q12, 1> (symbols: {b, c, })
+		<q9, 1> -> <q13, 1> (symbols: {b, c, })
+		<q9, 1> -> <q14, 1> (symbols: {b, c, })
+		<q9, 1> -> <q15, 1> (symbols: {b, c, })
+		<q9, 1> -> <trap, 1> (symbols: {b, })
+		<q9, 1> -> <trap, 1> (symbols: {c, })
+		<q9, 1> -> <trap, 1> (symbols: {})
+		<q10, 1> -> <trap, 1> (symbols: {a, b, c, })
+		<q10, 1> -> <trap, 1> (symbols: {a, b, })
+		<q10, 1> -> <trap, 1> (symbols: {a, c, })
+		<q10, 1> -> <q8, 1> (symbols: {a, })
+		<q10, 1> -> <q9, 1> (symbols: {a, })
+		<q10, 1> -> <q10, 1> (symbols: {a, })
+		<q10, 1> -> <q11, 1> (symbols: {a, })
+		<q10, 1> -> <q12, 1> (symbols: {a, })
+		<q10, 1> -> <q13, 1> (symbols: {a, })
+		<q10, 1> -> <q14, 1> (symbols: {a, })
+		<q10, 1> -> <q15, 1> (symbols: {a, })
+		<q10, 1> -> <trap, 1> (symbols: {b, c, })
+		<q10, 1> -> <trap, 1> (symbols: {b, })
+		<q10, 1> -> <trap, 1> (symbols: {c, })
+		<q10, 1> -> <trap, 1> (symbols: {})
+		<q11, 1> -> <trap, 1> (symbols: {a, b, c, })
+		<q11, 1> -> <trap, 1> (symbols: {a, b, })
+		<q11, 1> -> <q8, 1> (symbols: {a, c, })
+		<q11, 1> -> <q9, 1> (symbols: {a, c, })
+		<q11, 1> -> <q10, 1> (symbols: {a, c, })
+		<q11, 1> -> <q11, 1> (symbols: {a, c, })
+		<q11, 1> -> <q12, 1> (symbols: {a, c, })
+		<q11, 1> -> <q13, 1> (symbols: {a, c, })
+		<q11, 1> -> <q14, 1> (symbols: {a, c, })
+		<q11, 1> -> <q15, 1> (symbols: {a, c, })
+		<q11, 1> -> <trap, 1> (symbols: {a, })
+		<q11, 1> -> <trap, 1> (symbols: {b, c, })
+		<q11, 1> -> <trap, 1> (symbols: {b, })
+		<q11, 1> -> <trap, 1> (symbols: {c, })
+		<q11, 1> -> <trap, 1> (symbols: {})
+		<q12, 1> -> <trap, 1> (symbols: {a, b, c, })
+		<q12, 1> -> <q8, 1> (symbols: {a, b, })
+		<q12, 1> -> <q9, 1> (symbols: {a, b, })
+		<q12, 1> -> <q10, 1> (symbols: {a, b, })
+		<q12, 1> -> <q11, 1> (symbols: {a, b, })
+		<q12, 1> -> <q12, 1> (symbols: {a, b, })
+		<q12, 1> -> <q13, 1> (symbols: {a, b, })
+		<q12, 1> -> <q14, 1> (symbols: {a, b, })
+		<q12, 1> -> <q15, 1> (symbols: {a, b, })
+		<q12, 1> -> <trap, 1> (symbols: {a, c, })
+		<q12, 1> -> <trap, 1> (symbols: {a, })
+		<q12, 1> -> <trap, 1> (symbols: {b, c, })
+		<q12, 1> -> <trap, 1> (symbols: {b, })
+		<q12, 1> -> <trap, 1> (symbols: {c, })
+		<q12, 1> -> <trap, 1> (symbols: {})
+		<q13, 1> -> <q8, 1> (symbols: {a, b, c, })
+		<q13, 1> -> <q9, 1> (symbols: {a, b, c, })
+		<q13, 1> -> <q10, 1> (symbols: {a, b, c, })
+		<q13, 1> -> <q11, 1> (symbols: {a, b, c, })
+		<q13, 1> -> <q12, 1> (symbols: {a, b, c, })
+		<q13, 1> -> <q13, 1> (symbols: {a, b, c, })
+		<q13, 1> -> <q14, 1> (symbols: {a, b, c, })
+		<q13, 1> -> <q15, 1> (symbols: {a, b, c, })
+		<q13, 1> -> <trap, 1> (symbols: {a, b, })
+		<q13, 1> -> <trap, 1> (symbols: {a, c, })
+		<q13, 1> -> <trap, 1> (symbols: {a, })
+		<q13, 1> -> <trap, 1> (symbols: {b, c, })
+		<q13, 1> -> <trap, 1> (symbols: {b, })
+		<q13, 1> -> <trap, 1> (symbols: {c, })
+		<q13, 1> -> <trap, 1> (symbols: {})
+		<q14, 1> -> <trap, 1> (symbols: {a, b, c, })
+		<q14, 1> -> <trap, 1> (symbols: {a, b, })
+		<q14, 1> -> <trap, 1> (symbols: {a, c, })
+		<q14, 1> -> <trap, 1> (symbols: {a, })
+		<q14, 1> -> <trap, 1> (symbols: {b, c, })
+		<q14, 1> -> <trap, 1> (symbols: {b, })
+		<q14, 1> -> <trap, 1> (symbols: {c, })
+		<q14, 1> -> <q8, 1> (symbols: {})
+		<q14, 1> -> <q9, 1> (symbols: {})
+		<q14, 1> -> <q10, 1> (symbols: {})
+		<q14, 1> -> <q11, 1> (symbols: {})
+		<q14, 1> -> <q12, 1> (symbols: {})
+		<q14, 1> -> <q13, 1> (symbols: {})
+		<q14, 1> -> <q14, 1> (symbols: {})
+		<q14, 1> -> <q15, 1> (symbols: {})
+		<q15, 1> -> <trap, 1> (symbols: {a, b, c, })
+		<q15, 1> -> <trap, 1> (symbols: {a, b, })
+		<q15, 1> -> <trap, 1> (symbols: {a, c, })
+		<q15, 1> -> <trap, 1> (symbols: {a, })
+		<q15, 1> -> <trap, 1> (symbols: {b, c, })
+		<q15, 1> -> <trap, 1> (symbols: {b, })
+		<q15, 1> -> <q8, 1> (symbols: {c, })
+		<q15, 1> -> <q9, 1> (symbols: {c, })
+		<q15, 1> -> <q10, 1> (symbols: {c, })
+		<q15, 1> -> <q11, 1> (symbols: {c, })
+		<q15, 1> -> <q12, 1> (symbols: {c, })
+		<q15, 1> -> <q13, 1> (symbols: {c, })
+		<q15, 1> -> <q14, 1> (symbols: {c, })
+		<q15, 1> -> <q15, 1> (symbols: {c, })
+		<q15, 1> -> <trap, 1> (symbols: {})
+		<trap, 1> -> <trap, 1> (symbols: {a, b, c, })
+		<trap, 1> -> <trap, 1> (symbols: {a, b, })
+		<trap, 1> -> <trap, 1> (symbols: {a, c, })
+		<trap, 1> -> <trap, 1> (symbols: {a, })
+		<trap, 1> -> <trap, 1> (symbols: {b, c, })
+		<trap, 1> -> <trap, 1> (symbols: {b, })
+		<trap, 1> -> <trap, 1> (symbols: {c, })
+		<trap, 1> -> <trap, 1> (symbols: {})
+	F: {<q0, 1>, <q1, 1>, <q2, 1>, <q3, 1>, <q4, 1>, <q5, 1>, <q6, 1>, <q7, 1>, }
+
+[Transition System: Producted TS]
+	States: 
+		<s0, q0, 1>
+		<s0, q1, 1>
+		<s0, q2, 1>
+		<s0, q3, 1>
+		<s0, q4, 1>
+		<s0, q5, 1>
+		<s0, q6, 1>
+		<s0, q7, 1>
+		<s0, q8, 1>
+		<s0, q9, 1>
+		<s0, q10, 1>
+		<s0, q11, 1>
+		<s0, q12, 1>
+		<s0, q13, 1>
+		<s0, q14, 1>
+		<s0, q15, 1>
+		<s0, trap, 1>
+		<s1, q0, 1>
+		<s1, q1, 1>
+		<s1, q2, 1>
+		<s1, q3, 1>
+		<s1, q4, 1>
+		<s1, q5, 1>
+		<s1, q6, 1>
+		<s1, q7, 1>
+		<s1, q8, 1>
+		<s1, q9, 1>
+		<s1, q10, 1>
+		<s1, q11, 1>
+		<s1, q12, 1>
+		<s1, q13, 1>
+		<s1, q14, 1>
+		<s1, q15, 1>
+		<s1, trap, 1>
+		<s2, q0, 1>
+		<s2, q1, 1>
+		<s2, q2, 1>
+		<s2, q3, 1>
+		<s2, q4, 1>
+		<s2, q5, 1>
+		<s2, q6, 1>
+		<s2, q7, 1>
+		<s2, q8, 1>
+		<s2, q9, 1>
+		<s2, q10, 1>
+		<s2, q11, 1>
+		<s2, q12, 1>
+		<s2, q13, 1>
+		<s2, q14, 1>
+		<s2, q15, 1>
+		<s2, trap, 1>
+		<s3, q0, 1>
+		<s3, q1, 1>
+		<s3, q2, 1>
+		<s3, q3, 1>
+		<s3, q4, 1>
+		<s3, q5, 1>
+		<s3, q6, 1>
+		<s3, q7, 1>
+		<s3, q8, 1>
+		<s3, q9, 1>
+		<s3, q10, 1>
+		<s3, q11, 1>
+		<s3, q12, 1>
+		<s3, q13, 1>
+		<s3, q14, 1>
+		<s3, q15, 1>
+		<s3, trap, 1>
+		<s4, q0, 1>
+		<s4, q1, 1>
+		<s4, q2, 1>
+		<s4, q3, 1>
+		<s4, q4, 1>
+		<s4, q5, 1>
+		<s4, q6, 1>
+		<s4, q7, 1>
+		<s4, q8, 1>
+		<s4, q9, 1>
+		<s4, q10, 1>
+		<s4, q11, 1>
+		<s4, q12, 1>
+		<s4, q13, 1>
+		<s4, q14, 1>
+		<s4, q15, 1>
+		<s4, trap, 1>
+		<s5, q0, 1>
+		<s5, q1, 1>
+		<s5, q2, 1>
+		<s5, q3, 1>
+		<s5, q4, 1>
+		<s5, q5, 1>
+		<s5, q6, 1>
+		<s5, q7, 1>
+		<s5, q8, 1>
+		<s5, q9, 1>
+		<s5, q10, 1>
+		<s5, q11, 1>
+		<s5, q12, 1>
+		<s5, q13, 1>
+		<s5, q14, 1>
+		<s5, q15, 1>
+		<s5, trap, 1>
+	Initial States: 
+		<s0, q8, 1>
+		<s0, q9, 1>
+		<s0, q10, 1>
+		<s0, q11, 1>
+		<s0, q12, 1>
+		<s0, q13, 1>
+		<s0, q14, 1>
+		<s0, q15, 1>
+		<s0, trap, 1>
+	Actions: {0, 1, 2, }
+	AP: {@<q0, 1>, @<q1, 1>, @<q2, 1>, @<q3, 1>, @<q4, 1>, @<q5, 1>, @<q6, 1>, @<q7, 1>, <q8, 1>, <q9, 1>, <q10, 1>, <q11, 1>, <q12, 1>, <q13, 1>, <q14, 1>, <q15, 1>, <trap, 1>, }
+	Transitions: 
+		<s0, q0, 1> -> <s1, trap, 1> (transition: t0, action: 1)
+		<s0, q0, 1> -> <s3, trap, 1> (transition: t31, action: 0)
+		<s0, q1, 1> -> <s1, trap, 1> (transition: t1, action: 1)
+		<s0, q1, 1> -> <s3, trap, 1> (transition: t32, action: 0)
+		<s0, q2, 1> -> <s1, trap, 1> (transition: t2, action: 1)
+		<s0, q2, 1> -> <s3, trap, 1> (transition: t33, action: 0)
+		<s0, q3, 1> -> <s1, trap, 1> (transition: t3, action: 1)
+		<s0, q3, 1> -> <s3, q0, 1> (transition: t34, action: 0)
+		<s0, q3, 1> -> <s3, q1, 1> (transition: t35, action: 0)
+		<s0, q3, 1> -> <s3, q2, 1> (transition: t36, action: 0)
+		<s0, q3, 1> -> <s3, q3, 1> (transition: t37, action: 0)
+		<s0, q3, 1> -> <s3, q4, 1> (transition: t38, action: 0)
+		<s0, q3, 1> -> <s3, q5, 1> (transition: t39, action: 0)
+		<s0, q3, 1> -> <s3, q6, 1> (transition: t40, action: 0)
+		<s0, q3, 1> -> <s3, q7, 1> (transition: t41, action: 0)
+		<s0, q4, 1> -> <s1, trap, 1> (transition: t4, action: 1)
+		<s0, q4, 1> -> <s3, trap, 1> (transition: t42, action: 0)
+		<s0, q5, 1> -> <s1, q0, 1> (transition: t5, action: 1)
+		<s0, q5, 1> -> <s1, q1, 1> (transition: t6, action: 1)
+		<s0, q5, 1> -> <s1, q2, 1> (transition: t7, action: 1)
+		<s0, q5, 1> -> <s1, q3, 1> (transition: t8, action: 1)
+		<s0, q5, 1> -> <s1, q4, 1> (transition: t9, action: 1)
+		<s0, q5, 1> -> <s1, q5, 1> (transition: t10, action: 1)
+		<s0, q5, 1> -> <s1, q6, 1> (transition: t11, action: 1)
+		<s0, q5, 1> -> <s1, q7, 1> (transition: t12, action: 1)
+		<s0, q5, 1> -> <s3, trap, 1> (transition: t43, action: 0)
+		<s0, q6, 1> -> <s1, trap, 1> (transition: t13, action: 1)
+		<s0, q6, 1> -> <s3, trap, 1> (transition: t44, action: 0)
+		<s0, q7, 1> -> <s1, trap, 1> (transition: t14, action: 1)
+		<s0, q7, 1> -> <s3, trap, 1> (transition: t45, action: 0)
+		<s0, q8, 1> -> <s1, trap, 1> (transition: t15, action: 1)
+		<s0, q8, 1> -> <s3, trap, 1> (transition: t46, action: 0)
+		<s0, q9, 1> -> <s1, trap, 1> (transition: t16, action: 1)
+		<s0, q9, 1> -> <s3, trap, 1> (transition: t47, action: 0)
+		<s0, q10, 1> -> <s1, trap, 1> (transition: t17, action: 1)
+		<s0, q10, 1> -> <s3, trap, 1> (transition: t48, action: 0)
+		<s0, q11, 1> -> <s1, trap, 1> (transition: t18, action: 1)
+		<s0, q11, 1> -> <s3, q8, 1> (transition: t49, action: 0)
+		<s0, q11, 1> -> <s3, q9, 1> (transition: t50, action: 0)
+		<s0, q11, 1> -> <s3, q10, 1> (transition: t51, action: 0)
+		<s0, q11, 1> -> <s3, q11, 1> (transition: t52, action: 0)
+		<s0, q11, 1> -> <s3, q12, 1> (transition: t53, action: 0)
+		<s0, q11, 1> -> <s3, q13, 1> (transition: t54, action: 0)
+		<s0, q11, 1> -> <s3, q14, 1> (transition: t55, action: 0)
+		<s0, q11, 1> -> <s3, q15, 1> (transition: t56, action: 0)
+		<s0, q12, 1> -> <s1, trap, 1> (transition: t19, action: 1)
+		<s0, q12, 1> -> <s3, trap, 1> (transition: t57, action: 0)
+		<s0, q13, 1> -> <s1, q8, 1> (transition: t20, action: 1)
+		<s0, q13, 1> -> <s1, q9, 1> (transition: t21, action: 1)
+		<s0, q13, 1> -> <s1, q10, 1> (transition: t22, action: 1)
+		<s0, q13, 1> -> <s1, q11, 1> (transition: t23, action: 1)
+		<s0, q13, 1> -> <s1, q12, 1> (transition: t24, action: 1)
+		<s0, q13, 1> -> <s1, q13, 1> (transition: t25, action: 1)
+		<s0, q13, 1> -> <s1, q14, 1> (transition: t26, action: 1)
+		<s0, q13, 1> -> <s1, q15, 1> (transition: t27, action: 1)
+		<s0, q13, 1> -> <s3, trap, 1> (transition: t58, action: 0)
+		<s0, q14, 1> -> <s1, trap, 1> (transition: t28, action: 1)
+		<s0, q14, 1> -> <s3, trap, 1> (transition: t59, action: 0)
+		<s0, q15, 1> -> <s1, trap, 1> (transition: t29, action: 1)
+		<s0, q15, 1> -> <s3, trap, 1> (transition: t60, action: 0)
+		<s0, trap, 1> -> <s1, trap, 1> (transition: t30, action: 1)
+		<s0, trap, 1> -> <s3, trap, 1> (transition: t61, action: 0)
+		<s1, q0, 1> -> <s4, trap, 1> (transition: t93, action: 2)
+		<s1, q1, 1> -> <s4, trap, 1> (transition: t94, action: 2)
+		<s1, q2, 1> -> <s4, trap, 1> (transition: t95, action: 2)
+		<s1, q3, 1> -> <s4, q0, 1> (transition: t96, action: 2)
+		<s1, q3, 1> -> <s4, q1, 1> (transition: t97, action: 2)
+		<s1, q3, 1> -> <s4, q2, 1> (transition: t98, action: 2)
+		<s1, q3, 1> -> <s4, q3, 1> (transition: t99, action: 2)
+		<s1, q3, 1> -> <s4, q4, 1> (transition: t100, action: 2)
+		<s1, q3, 1> -> <s4, q5, 1> (transition: t101, action: 2)
+		<s1, q3, 1> -> <s4, q6, 1> (transition: t102, action: 2)
+		<s1, q3, 1> -> <s4, q7, 1> (transition: t103, action: 2)
+		<s1, q4, 1> -> <s4, trap, 1> (transition: t104, action: 2)
+		<s1, q5, 1> -> <s4, trap, 1> (transition: t105, action: 2)
+		<s1, q6, 1> -> <s4, trap, 1> (transition: t106, action: 2)
+		<s1, q7, 1> -> <s4, trap, 1> (transition: t107, action: 2)
+		<s1, q8, 1> -> <s4, trap, 1> (transition: t108, action: 2)
+		<s1, q9, 1> -> <s4, trap, 1> (transition: t109, action: 2)
+		<s1, q10, 1> -> <s4, trap, 1> (transition: t110, action: 2)
+		<s1, q11, 1> -> <s4, q8, 1> (transition: t111, action: 2)
+		<s1, q11, 1> -> <s4, q9, 1> (transition: t112, action: 2)
+		<s1, q11, 1> -> <s4, q10, 1> (transition: t113, action: 2)
+		<s1, q11, 1> -> <s4, q11, 1> (transition: t114, action: 2)
+		<s1, q11, 1> -> <s4, q12, 1> (transition: t115, action: 2)
+		<s1, q11, 1> -> <s4, q13, 1> (transition: t116, action: 2)
+		<s1, q11, 1> -> <s4, q14, 1> (transition: t117, action: 2)
+		<s1, q11, 1> -> <s4, q15, 1> (transition: t118, action: 2)
+		<s1, q12, 1> -> <s4, trap, 1> (transition: t119, action: 2)
+		<s1, q13, 1> -> <s4, trap, 1> (transition: t120, action: 2)
+		<s1, q14, 1> -> <s4, trap, 1> (transition: t121, action: 2)
+		<s1, q15, 1> -> <s4, trap, 1> (transition: t122, action: 2)
+		<s1, trap, 1> -> <s4, trap, 1> (transition: t123, action: 2)
+		<s2, q0, 1> -> <s1, trap, 1> (transition: t124, action: 2)
+		<s2, q1, 1> -> <s1, trap, 1> (transition: t125, action: 2)
+		<s2, q2, 1> -> <s1, trap, 1> (transition: t126, action: 2)
+		<s2, q3, 1> -> <s1, trap, 1> (transition: t127, action: 2)
+		<s2, q4, 1> -> <s1, trap, 1> (transition: t128, action: 2)
+		<s2, q5, 1> -> <s1, q0, 1> (transition: t129, action: 2)
+		<s2, q5, 1> -> <s1, q1, 1> (transition: t130, action: 2)
+		<s2, q5, 1> -> <s1, q2, 1> (transition: t131, action: 2)
+		<s2, q5, 1> -> <s1, q3, 1> (transition: t132, action: 2)
+		<s2, q5, 1> -> <s1, q4, 1> (transition: t133, action: 2)
+		<s2, q5, 1> -> <s1, q5, 1> (transition: t134, action: 2)
+		<s2, q5, 1> -> <s1, q6, 1> (transition: t135, action: 2)
+		<s2, q5, 1> -> <s1, q7, 1> (transition: t136, action: 2)
+		<s2, q6, 1> -> <s1, trap, 1> (transition: t137, action: 2)
+		<s2, q7, 1> -> <s1, trap, 1> (transition: t138, action: 2)
+		<s2, q8, 1> -> <s1, trap, 1> (transition: t139, action: 2)
+		<s2, q9, 1> -> <s1, trap, 1> (transition: t140, action: 2)
+		<s2, q10, 1> -> <s1, trap, 1> (transition: t141, action: 2)
+		<s2, q11, 1> -> <s1, trap, 1> (transition: t142, action: 2)
+		<s2, q12, 1> -> <s1, trap, 1> (transition: t143, action: 2)
+		<s2, q13, 1> -> <s1, q8, 1> (transition: t144, action: 2)
+		<s2, q13, 1> -> <s1, q9, 1> (transition: t145, action: 2)
+		<s2, q13, 1> -> <s1, q10, 1> (transition: t146, action: 2)
+		<s2, q13, 1> -> <s1, q11, 1> (transition: t147, action: 2)
+		<s2, q13, 1> -> <s1, q12, 1> (transition: t148, action: 2)
+		<s2, q13, 1> -> <s1, q13, 1> (transition: t149, action: 2)
+		<s2, q13, 1> -> <s1, q14, 1> (transition: t150, action: 2)
+		<s2, q13, 1> -> <s1, q15, 1> (transition: t151, action: 2)
+		<s2, q14, 1> -> <s1, trap, 1> (transition: t152, action: 2)
+		<s2, q15, 1> -> <s1, trap, 1> (transition: t153, action: 2)
+		<s2, trap, 1> -> <s1, trap, 1> (transition: t154, action: 2)
+		<s3, q0, 1> -> <s1, trap, 1> (transition: t62, action: 2)
+		<s3, q1, 1> -> <s1, trap, 1> (transition: t63, action: 2)
+		<s3, q2, 1> -> <s1, trap, 1> (transition: t64, action: 2)
+		<s3, q3, 1> -> <s1, trap, 1> (transition: t65, action: 2)
+		<s3, q4, 1> -> <s1, trap, 1> (transition: t66, action: 2)
+		<s3, q5, 1> -> <s1, q0, 1> (transition: t67, action: 2)
+		<s3, q5, 1> -> <s1, q1, 1> (transition: t68, action: 2)
+		<s3, q5, 1> -> <s1, q2, 1> (transition: t69, action: 2)
+		<s3, q5, 1> -> <s1, q3, 1> (transition: t70, action: 2)
+		<s3, q5, 1> -> <s1, q4, 1> (transition: t71, action: 2)
+		<s3, q5, 1> -> <s1, q5, 1> (transition: t72, action: 2)
+		<s3, q5, 1> -> <s1, q6, 1> (transition: t73, action: 2)
+		<s3, q5, 1> -> <s1, q7, 1> (transition: t74, action: 2)
+		<s3, q6, 1> -> <s1, trap, 1> (transition: t75, action: 2)
+		<s3, q7, 1> -> <s1, trap, 1> (transition: t76, action: 2)
+		<s3, q8, 1> -> <s1, trap, 1> (transition: t77, action: 2)
+		<s3, q9, 1> -> <s1, trap, 1> (transition: t78, action: 2)
+		<s3, q10, 1> -> <s1, trap, 1> (transition: t79, action: 2)
+		<s3, q11, 1> -> <s1, trap, 1> (transition: t80, action: 2)
+		<s3, q12, 1> -> <s1, trap, 1> (transition: t81, action: 2)
+		<s3, q13, 1> -> <s1, q8, 1> (transition: t82, action: 2)
+		<s3, q13, 1> -> <s1, q9, 1> (transition: t83, action: 2)
+		<s3, q13, 1> -> <s1, q10, 1> (transition: t84, action: 2)
+		<s3, q13, 1> -> <s1, q11, 1> (transition: t85, action: 2)
+		<s3, q13, 1> -> <s1, q12, 1> (transition: t86, action: 2)
+		<s3, q13, 1> -> <s1, q13, 1> (transition: t87, action: 2)
+		<s3, q13, 1> -> <s1, q14, 1> (transition: t88, action: 2)
+		<s3, q13, 1> -> <s1, q15, 1> (transition: t89, action: 2)
+		<s3, q14, 1> -> <s1, trap, 1> (transition: t90, action: 2)
+		<s3, q15, 1> -> <s1, trap, 1> (transition: t91, action: 2)
+		<s3, trap, 1> -> <s1, trap, 1> (transition: t92, action: 2)
+		<s4, q0, 1> -> <s1, trap, 1> (transition: t217, action: 0)
+		<s4, q0, 1> -> <s5, trap, 1> (transition: t248, action: 1)
+		<s4, q1, 1> -> <s1, trap, 1> (transition: t218, action: 0)
+		<s4, q1, 1> -> <s5, trap, 1> (transition: t249, action: 1)
+		<s4, q2, 1> -> <s1, trap, 1> (transition: t219, action: 0)
+		<s4, q2, 1> -> <s5, trap, 1> (transition: t250, action: 1)
+		<s4, q3, 1> -> <s1, trap, 1> (transition: t220, action: 0)
+		<s4, q3, 1> -> <s5, trap, 1> (transition: t251, action: 1)
+		<s4, q4, 1> -> <s1, trap, 1> (transition: t221, action: 0)
+		<s4, q4, 1> -> <s5, q0, 1> (transition: t252, action: 1)
+		<s4, q4, 1> -> <s5, q1, 1> (transition: t253, action: 1)
+		<s4, q4, 1> -> <s5, q2, 1> (transition: t254, action: 1)
+		<s4, q4, 1> -> <s5, q3, 1> (transition: t255, action: 1)
+		<s4, q4, 1> -> <s5, q4, 1> (transition: t256, action: 1)
+		<s4, q4, 1> -> <s5, q5, 1> (transition: t257, action: 1)
+		<s4, q4, 1> -> <s5, q6, 1> (transition: t258, action: 1)
+		<s4, q4, 1> -> <s5, q7, 1> (transition: t259, action: 1)
+		<s4, q5, 1> -> <s1, q0, 1> (transition: t222, action: 0)
+		<s4, q5, 1> -> <s1, q1, 1> (transition: t223, action: 0)
+		<s4, q5, 1> -> <s1, q2, 1> (transition: t224, action: 0)
+		<s4, q5, 1> -> <s1, q3, 1> (transition: t225, action: 0)
+		<s4, q5, 1> -> <s1, q4, 1> (transition: t226, action: 0)
+		<s4, q5, 1> -> <s1, q5, 1> (transition: t227, action: 0)
+		<s4, q5, 1> -> <s1, q6, 1> (transition: t228, action: 0)
+		<s4, q5, 1> -> <s1, q7, 1> (transition: t229, action: 0)
+		<s4, q5, 1> -> <s5, trap, 1> (transition: t260, action: 1)
+		<s4, q6, 1> -> <s1, trap, 1> (transition: t230, action: 0)
+		<s4, q6, 1> -> <s5, trap, 1> (transition: t261, action: 1)
+		<s4, q7, 1> -> <s1, trap, 1> (transition: t231, action: 0)
+		<s4, q7, 1> -> <s5, trap, 1> (transition: t262, action: 1)
+		<s4, q8, 1> -> <s1, trap, 1> (transition: t232, action: 0)
+		<s4, q8, 1> -> <s5, trap, 1> (transition: t263, action: 1)
+		<s4, q9, 1> -> <s1, trap, 1> (transition: t233, action: 0)
+		<s4, q9, 1> -> <s5, trap, 1> (transition: t264, action: 1)
+		<s4, q10, 1> -> <s1, trap, 1> (transition: t234, action: 0)
+		<s4, q10, 1> -> <s5, trap, 1> (transition: t265, action: 1)
+		<s4, q11, 1> -> <s1, trap, 1> (transition: t235, action: 0)
+		<s4, q11, 1> -> <s5, trap, 1> (transition: t266, action: 1)
+		<s4, q12, 1> -> <s1, trap, 1> (transition: t236, action: 0)
+		<s4, q12, 1> -> <s5, q8, 1> (transition: t267, action: 1)
+		<s4, q12, 1> -> <s5, q9, 1> (transition: t268, action: 1)
+		<s4, q12, 1> -> <s5, q10, 1> (transition: t269, action: 1)
+		<s4, q12, 1> -> <s5, q11, 1> (transition: t270, action: 1)
+		<s4, q12, 1> -> <s5, q12, 1> (transition: t271, action: 1)
+		<s4, q12, 1> -> <s5, q13, 1> (transition: t272, action: 1)
+		<s4, q12, 1> -> <s5, q14, 1> (transition: t273, action: 1)
+		<s4, q12, 1> -> <s5, q15, 1> (transition: t274, action: 1)
+		<s4, q13, 1> -> <s1, q8, 1> (transition: t237, action: 0)
+		<s4, q13, 1> -> <s1, q9, 1> (transition: t238, action: 0)
+		<s4, q13, 1> -> <s1, q10, 1> (transition: t239, action: 0)
+		<s4, q13, 1> -> <s1, q11, 1> (transition: t240, action: 0)
+		<s4, q13, 1> -> <s1, q12, 1> (transition: t241, action: 0)
+		<s4, q13, 1> -> <s1, q13, 1> (transition: t242, action: 0)
+		<s4, q13, 1> -> <s1, q14, 1> (transition: t243, action: 0)
+		<s4, q13, 1> -> <s1, q15, 1> (transition: t244, action: 0)
+		<s4, q13, 1> -> <s5, trap, 1> (transition: t275, action: 1)
+		<s4, q14, 1> -> <s1, trap, 1> (transition: t245, action: 0)
+		<s4, q14, 1> -> <s5, trap, 1> (transition: t276, action: 1)
+		<s4, q15, 1> -> <s1, trap, 1> (transition: t246, action: 0)
+		<s4, q15, 1> -> <s5, trap, 1> (transition: t277, action: 1)
+		<s4, trap, 1> -> <s1, trap, 1> (transition: t247, action: 0)
+		<s4, trap, 1> -> <s5, trap, 1> (transition: t278, action: 1)
+		<s5, q0, 1> -> <s2, trap, 1> (transition: t155, action: 0)
+		<s5, q0, 1> -> <s1, trap, 1> (transition: t186, action: 1)
+		<s5, q1, 1> -> <s2, q0, 1> (transition: t156, action: 0)
+		<s5, q1, 1> -> <s2, q1, 1> (transition: t157, action: 0)
+		<s5, q1, 1> -> <s2, q2, 1> (transition: t158, action: 0)
+		<s5, q1, 1> -> <s2, q3, 1> (transition: t159, action: 0)
+		<s5, q1, 1> -> <s2, q4, 1> (transition: t160, action: 0)
+		<s5, q1, 1> -> <s2, q5, 1> (transition: t161, action: 0)
+		<s5, q1, 1> -> <s2, q6, 1> (transition: t162, action: 0)
+		<s5, q1, 1> -> <s2, q7, 1> (transition: t163, action: 0)
+		<s5, q1, 1> -> <s1, trap, 1> (transition: t187, action: 1)
+		<s5, q2, 1> -> <s2, trap, 1> (transition: t164, action: 0)
+		<s5, q2, 1> -> <s1, trap, 1> (transition: t188, action: 1)
+		<s5, q3, 1> -> <s2, trap, 1> (transition: t165, action: 0)
+		<s5, q3, 1> -> <s1, trap, 1> (transition: t189, action: 1)
+		<s5, q4, 1> -> <s2, trap, 1> (transition: t166, action: 0)
+		<s5, q4, 1> -> <s1, trap, 1> (transition: t190, action: 1)
+		<s5, q5, 1> -> <s2, trap, 1> (transition: t167, action: 0)
+		<s5, q5, 1> -> <s1, q0, 1> (transition: t191, action: 1)
+		<s5, q5, 1> -> <s1, q1, 1> (transition: t192, action: 1)
+		<s5, q5, 1> -> <s1, q2, 1> (transition: t193, action: 1)
+		<s5, q5, 1> -> <s1, q3, 1> (transition: t194, action: 1)
+		<s5, q5, 1> -> <s1, q4, 1> (transition: t195, action: 1)
+		<s5, q5, 1> -> <s1, q5, 1> (transition: t196, action: 1)
+		<s5, q5, 1> -> <s1, q6, 1> (transition: t197, action: 1)
+		<s5, q5, 1> -> <s1, q7, 1> (transition: t198, action: 1)
+		<s5, q6, 1> -> <s2, trap, 1> (transition: t168, action: 0)
+		<s5, q6, 1> -> <s1, trap, 1> (transition: t199, action: 1)
+		<s5, q7, 1> -> <s2, trap, 1> (transition: t169, action: 0)
+		<s5, q7, 1> -> <s1, trap, 1> (transition: t200, action: 1)
+		<s5, q8, 1> -> <s2, trap, 1> (transition: t170, action: 0)
+		<s5, q8, 1> -> <s1, trap, 1> (transition: t201, action: 1)
+		<s5, q9, 1> -> <s2, q8, 1> (transition: t171, action: 0)
+		<s5, q9, 1> -> <s2, q9, 1> (transition: t172, action: 0)
+		<s5, q9, 1> -> <s2, q10, 1> (transition: t173, action: 0)
+		<s5, q9, 1> -> <s2, q11, 1> (transition: t174, action: 0)
+		<s5, q9, 1> -> <s2, q12, 1> (transition: t175, action: 0)
+		<s5, q9, 1> -> <s2, q13, 1> (transition: t176, action: 0)
+		<s5, q9, 1> -> <s2, q14, 1> (transition: t177, action: 0)
+		<s5, q9, 1> -> <s2, q15, 1> (transition: t178, action: 0)
+		<s5, q9, 1> -> <s1, trap, 1> (transition: t202, action: 1)
+		<s5, q10, 1> -> <s2, trap, 1> (transition: t179, action: 0)
+		<s5, q10, 1> -> <s1, trap, 1> (transition: t203, action: 1)
+		<s5, q11, 1> -> <s2, trap, 1> (transition: t180, action: 0)
+		<s5, q11, 1> -> <s1, trap, 1> (transition: t204, action: 1)
+		<s5, q12, 1> -> <s2, trap, 1> (transition: t181, action: 0)
+		<s5, q12, 1> -> <s1, trap, 1> (transition: t205, action: 1)
+		<s5, q13, 1> -> <s2, trap, 1> (transition: t182, action: 0)
+		<s5, q13, 1> -> <s1, q8, 1> (transition: t206, action: 1)
+		<s5, q13, 1> -> <s1, q9, 1> (transition: t207, action: 1)
+		<s5, q13, 1> -> <s1, q10, 1> (transition: t208, action: 1)
+		<s5, q13, 1> -> <s1, q11, 1> (transition: t209, action: 1)
+		<s5, q13, 1> -> <s1, q12, 1> (transition: t210, action: 1)
+		<s5, q13, 1> -> <s1, q13, 1> (transition: t211, action: 1)
+		<s5, q13, 1> -> <s1, q14, 1> (transition: t212, action: 1)
+		<s5, q13, 1> -> <s1, q15, 1> (transition: t213, action: 1)
+		<s5, q14, 1> -> <s2, trap, 1> (transition: t183, action: 0)
+		<s5, q14, 1> -> <s1, trap, 1> (transition: t214, action: 1)
+		<s5, q15, 1> -> <s2, trap, 1> (transition: t184, action: 0)
+		<s5, q15, 1> -> <s1, trap, 1> (transition: t215, action: 1)
+		<s5, trap, 1> -> <s2, trap, 1> (transition: t185, action: 0)
+		<s5, trap, 1> -> <s1, trap, 1> (transition: t216, action: 1)
+	L: 
+		L(<s0, q0, 1>) = {@<q0, 1>, }
+		L(<s0, q1, 1>) = {@<q1, 1>, }
+		L(<s0, q2, 1>) = {@<q2, 1>, }
+		L(<s0, q3, 1>) = {@<q3, 1>, }
+		L(<s0, q4, 1>) = {@<q4, 1>, }
+		L(<s0, q5, 1>) = {@<q5, 1>, }
+		L(<s0, q6, 1>) = {@<q6, 1>, }
+		L(<s0, q7, 1>) = {@<q7, 1>, }
+		L(<s0, q8, 1>) = {<q8, 1>, }
+		L(<s0, q9, 1>) = {<q9, 1>, }
+		L(<s0, q10, 1>) = {<q10, 1>, }
+		L(<s0, q11, 1>) = {<q11, 1>, }
+		L(<s0, q12, 1>) = {<q12, 1>, }
+		L(<s0, q13, 1>) = {<q13, 1>, }
+		L(<s0, q14, 1>) = {<q14, 1>, }
+		L(<s0, q15, 1>) = {<q15, 1>, }
+		L(<s0, trap, 1>) = {<trap, 1>, }
+		L(<s1, q0, 1>) = {@<q0, 1>, }
+		L(<s1, q1, 1>) = {@<q1, 1>, }
+		L(<s1, q2, 1>) = {@<q2, 1>, }
+		L(<s1, q3, 1>) = {@<q3, 1>, }
+		L(<s1, q4, 1>) = {@<q4, 1>, }
+		L(<s1, q5, 1>) = {@<q5, 1>, }
+		L(<s1, q6, 1>) = {@<q6, 1>, }
+		L(<s1, q7, 1>) = {@<q7, 1>, }
+		L(<s1, q8, 1>) = {<q8, 1>, }
+		L(<s1, q9, 1>) = {<q9, 1>, }
+		L(<s1, q10, 1>) = {<q10, 1>, }
+		L(<s1, q11, 1>) = {<q11, 1>, }
+		L(<s1, q12, 1>) = {<q12, 1>, }
+		L(<s1, q13, 1>) = {<q13, 1>, }
+		L(<s1, q14, 1>) = {<q14, 1>, }
+		L(<s1, q15, 1>) = {<q15, 1>, }
+		L(<s1, trap, 1>) = {<trap, 1>, }
+		L(<s2, q0, 1>) = {@<q0, 1>, }
+		L(<s2, q1, 1>) = {@<q1, 1>, }
+		L(<s2, q2, 1>) = {@<q2, 1>, }
+		L(<s2, q3, 1>) = {@<q3, 1>, }
+		L(<s2, q4, 1>) = {@<q4, 1>, }
+		L(<s2, q5, 1>) = {@<q5, 1>, }
+		L(<s2, q6, 1>) = {@<q6, 1>, }
+		L(<s2, q7, 1>) = {@<q7, 1>, }
+		L(<s2, q8, 1>) = {<q8, 1>, }
+		L(<s2, q9, 1>) = {<q9, 1>, }
+		L(<s2, q10, 1>) = {<q10, 1>, }
+		L(<s2, q11, 1>) = {<q11, 1>, }
+		L(<s2, q12, 1>) = {<q12, 1>, }
+		L(<s2, q13, 1>) = {<q13, 1>, }
+		L(<s2, q14, 1>) = {<q14, 1>, }
+		L(<s2, q15, 1>) = {<q15, 1>, }
+		L(<s2, trap, 1>) = {<trap, 1>, }
+		L(<s3, q0, 1>) = {@<q0, 1>, }
+		L(<s3, q1, 1>) = {@<q1, 1>, }
+		L(<s3, q2, 1>) = {@<q2, 1>, }
+		L(<s3, q3, 1>) = {@<q3, 1>, }
+		L(<s3, q4, 1>) = {@<q4, 1>, }
+		L(<s3, q5, 1>) = {@<q5, 1>, }
+		L(<s3, q6, 1>) = {@<q6, 1>, }
+		L(<s3, q7, 1>) = {@<q7, 1>, }
+		L(<s3, q8, 1>) = {<q8, 1>, }
+		L(<s3, q9, 1>) = {<q9, 1>, }
+		L(<s3, q10, 1>) = {<q10, 1>, }
+		L(<s3, q11, 1>) = {<q11, 1>, }
+		L(<s3, q12, 1>) = {<q12, 1>, }
+		L(<s3, q13, 1>) = {<q13, 1>, }
+		L(<s3, q14, 1>) = {<q14, 1>, }
+		L(<s3, q15, 1>) = {<q15, 1>, }
+		L(<s3, trap, 1>) = {<trap, 1>, }
+		L(<s4, q0, 1>) = {@<q0, 1>, }
+		L(<s4, q1, 1>) = {@<q1, 1>, }
+		L(<s4, q2, 1>) = {@<q2, 1>, }
+		L(<s4, q3, 1>) = {@<q3, 1>, }
+		L(<s4, q4, 1>) = {@<q4, 1>, }
+		L(<s4, q5, 1>) = {@<q5, 1>, }
+		L(<s4, q6, 1>) = {@<q6, 1>, }
+		L(<s4, q7, 1>) = {@<q7, 1>, }
+		L(<s4, q8, 1>) = {<q8, 1>, }
+		L(<s4, q9, 1>) = {<q9, 1>, }
+		L(<s4, q10, 1>) = {<q10, 1>, }
+		L(<s4, q11, 1>) = {<q11, 1>, }
+		L(<s4, q12, 1>) = {<q12, 1>, }
+		L(<s4, q13, 1>) = {<q13, 1>, }
+		L(<s4, q14, 1>) = {<q14, 1>, }
+		L(<s4, q15, 1>) = {<q15, 1>, }
+		L(<s4, trap, 1>) = {<trap, 1>, }
+		L(<s5, q0, 1>) = {@<q0, 1>, }
+		L(<s5, q1, 1>) = {@<q1, 1>, }
+		L(<s5, q2, 1>) = {@<q2, 1>, }
+		L(<s5, q3, 1>) = {@<q3, 1>, }
+		L(<s5, q4, 1>) = {@<q4, 1>, }
+		L(<s5, q5, 1>) = {@<q5, 1>, }
+		L(<s5, q6, 1>) = {@<q6, 1>, }
+		L(<s5, q7, 1>) = {@<q7, 1>, }
+		L(<s5, q8, 1>) = {<q8, 1>, }
+		L(<s5, q9, 1>) = {<q9, 1>, }
+		L(<s5, q10, 1>) = {<q10, 1>, }
+		L(<s5, q11, 1>) = {<q11, 1>, }
+		L(<s5, q12, 1>) = {<q12, 1>, }
+		L(<s5, q13, 1>) = {<q13, 1>, }
+		L(<s5, q14, 1>) = {<q14, 1>, }
+		L(<s5, q15, 1>) = {<q15, 1>, }
+		L(<s5, trap, 1>) = {<trap, 1>, }

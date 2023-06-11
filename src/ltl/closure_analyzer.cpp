@@ -22,6 +22,16 @@ bool ClosureAnalyzer::inEnumerated(LTLFormula* formula) {
   return in(formula, enumerated_);
 }
 
+ClosureAnalyzer::~ClosureAnalyzer() {
+  for (auto f : created_) {
+    if (utils:: instanceof <ltl::AtomicProposition>(f)) {
+      delete dynamic_cast<ltl::AtomicProposition*>(f)->ap_name_;
+    }
+    delete f;
+  }
+  for (auto elem_set : elementary_sets_) delete elem_set;
+}
+
 void ClosureAnalyzer::show(std::ostream& os) const {
   os << "[Closure Analyzer]" << std::endl;
 
@@ -44,7 +54,7 @@ void ClosureAnalyzer::show(std::ostream& os) const {
   os << "\tElementary Sets: \n";
   int counter = 1;
   for (const auto& elem_set : elementary_sets_) {
-    os << "\t\tB" << counter << "={";
+    os << "\t\tB" << counter << " = {";
     for (const auto& formula : *elem_set) {
       os << toString(formula) << ", ";
     }
@@ -152,8 +162,12 @@ void ClosureAnalyzer::_visit(Until* node) {
 }
 
 void ClosureAnalyzer::_visit(AtomicProposition* node) {
-  putIntoClosureNormal(node);
-  AP_.insert(*node->ap_name_);
+  if (set_ap_) return;
+  for (const auto& name : *AP_) {
+    auto ap_node = new ltl::AtomicProposition(new std::string(name));
+    putIntoClosureNormal(ap_node);
+    created_.insert(ap_node);
+  }
 }
 
 void ClosureAnalyzer::_visit(True* node) {

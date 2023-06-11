@@ -67,7 +67,7 @@ bool equal(LTLFormula* lhs, LTLFormula* rhs) {
 }
 
 bool in(LTLFormula* formula, const std::vector<LTLFormula*>& container) {
-  for (auto f : container) {
+  for (const auto& f : container) {
     if (equal(f, formula)) {
       return true;
     }
@@ -76,7 +76,7 @@ bool in(LTLFormula* formula, const std::vector<LTLFormula*>& container) {
 }
 
 bool in(LTLFormula* formula, const std::set<LTLFormula*>& container) {
-  for (auto f : container) {
+  for (const auto& f : container) {
     if (equal(f, formula)) {
       return true;
     }

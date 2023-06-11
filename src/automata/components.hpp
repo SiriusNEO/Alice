@@ -51,7 +51,7 @@ class State {
 
   explicit State(const std::string &name, std::set<ltl::LTLFormula *> *B,
                  int index = 0)
-      : is_init_(false), name_(name), index_(index), delta_() {}
+      : is_init_(false), name_(name), B_(B), index_(index), delta_() {}
 };
 
 }  // namespace automata

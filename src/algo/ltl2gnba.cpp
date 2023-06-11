@@ -1,6 +1,5 @@
 #include <string>
 
-#include "../ltl/closure_analyzer.hpp"
 #include "../utils/instanceof.hpp"
 #include "../utils/logging.hpp"
 #include "algo.hpp"
@@ -26,26 +25,26 @@ void enumerateAlphabet(std::set<std::string>::iterator it,
   enumerateAlphabet(it, end, alphabet);
 }
 
-automata::GeneralizedBuechiAutomata* fromLTL(ltl::LTLFormula* formula) {
+automata::GeneralizedBuechiAutomata* fromLTL(
+    ltl::LTLFormula* formula, const ltl::ClosureAnalyzer& analyzer,
+    const std::set<std::string>& AP) {
   auto gnba = new automata::GeneralizedBuechiAutomata();
 
-  auto closure_analyzer = ltl::ClosureAnalyzer();
-  closure_analyzer.visit(formula);
-  closure_analyzer.getElementarySet();
-
   // Step 1. Construct the alphabet (2^AP).
-  enumerateAlphabet(closure_analyzer.AP_.begin(), closure_analyzer.AP_.end(),
-                    gnba->alphabet_);
+  enumerateAlphabet(AP.begin(), AP.end(), gnba->alphabet_);
 
   // Step 2. Construct Q, Q0 and delta.
   std::map<std::set<alice::ltl::LTLFormula*>*, automata::State*>
       elem_set_to_state;
-  for (size_t i = 0; i < closure_analyzer.elementary_sets_.size(); ++i) {
-    auto B = closure_analyzer.elementary_sets_[i];
+  for (size_t i = 0; i < analyzer.elementary_sets_.size(); ++i) {
+    auto B = analyzer.elementary_sets_[i];
 
     // Q and Q0
     auto state = new automata::State("q" + std::to_string(i), B);
-    if (B->find(formula) != B->end()) {
+
+    // LOG(INFO) << "created state: " << state->name_;
+
+    if (ltl::in(formula, *B)) {
       gnba->init_states_.push_back(state);
       state->is_init_ = true;
     }
@@ -59,14 +58,13 @@ automata::GeneralizedBuechiAutomata* fromLTL(ltl::LTLFormula* formula) {
   }
 
   // Step 3. Compute delta function
-  for (const auto& B : closure_analyzer.elementary_sets_) {
+  for (const auto& B : analyzer.elementary_sets_) {
     auto state = elem_set_to_state[B];
 
     std::set<std::string> B_and_AP;
     for (auto it = B->begin(); it != B->end(); ++it) {
       auto ap = dynamic_cast<ltl::AtomicProposition*>(*it);
-      if (ap != nullptr && closure_analyzer.AP_.find(*ap->ap_name_) !=
-                               closure_analyzer.AP_.end()) {
+      if (ap != nullptr && AP.find(*ap->ap_name_) != AP.end()) {
         B_and_AP.insert(*ap->ap_name_);
       }
     }
@@ -79,9 +77,9 @@ automata::GeneralizedBuechiAutomata* fromLTL(ltl::LTLFormula* formula) {
     }
     CHECK(A != NULL);
 
-    for (const auto& B_prime : closure_analyzer.elementary_sets_) {
+    for (const auto& B_prime : analyzer.elementary_sets_) {
       bool check_flag = true;
-      for (const auto& f : closure_analyzer.closure_) {
+      for (const auto& f : analyzer.closure_) {
         // (1) Next \psi in B <=> \psi in B'
         if (utils:: instanceof <ltl::Next>(f)) {
           bool cond1 = ltl::in(f, *B);
@@ -108,10 +106,10 @@ automata::GeneralizedBuechiAutomata* fromLTL(ltl::LTLFormula* formula) {
   }
 
   // Step 4. Construct F.
-  for (const auto& f : closure_analyzer.closure_) {
+  for (const auto& f : analyzer.closure_) {
     if (utils:: instanceof <ltl::Until>(f)) {
       std::set<automata::State*> F;
-      for (const auto& elem_set : closure_analyzer.elementary_sets_) {
+      for (const auto& elem_set : analyzer.elementary_sets_) {
         if (!in(f, *elem_set) || in(f->right_son_, *elem_set)) {
           F.insert(elem_set_to_state[elem_set]);
         }
@@ -124,12 +122,12 @@ automata::GeneralizedBuechiAutomata* fromLTL(ltl::LTLFormula* formula) {
 
   // Step 5. Turn to Non-Blocking.
   if (!gnba->isNonBlocking()) {
-    automata::State* trap = new automata::State("trap", nullptr);
-    gnba->states_.push_back(trap);
+    gnba->trap_ = new automata::State("trap", new std::set<ltl::LTLFormula*>());
+    gnba->states_.push_back(gnba->trap_);
     for (const auto& state : gnba->states_) {
       for (const auto& symbols : gnba->alphabet_) {
         if (state->delta_[symbols].empty()) {
-          state->delta_[symbols].push_back(trap);
+          state->delta_[symbols].push_back(gnba->trap_);
         }
       }
     }

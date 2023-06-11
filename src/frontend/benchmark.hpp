@@ -22,9 +22,11 @@ class Benchmark {
   std::ifstream file_in_;
   std::vector<ltl::LTLFormula*> global_formulas_;
   std::vector<std::pair<int, ltl::LTLFormula*>> local_formulas_;
-  int glb_cursor_, loc_cursor_;
 
  public:
+  int glb_num_, loc_num_;
+  int glb_cursor_, loc_cursor_;
+
   explicit Benchmark(const char* file_path);
 
   ltl::LTLFormula* next_glb();

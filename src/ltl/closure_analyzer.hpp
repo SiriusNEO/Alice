@@ -21,14 +21,12 @@ namespace ltl {
 
 class ClosureAnalyzer : public LTLVisitor {
  public:
-  std::set<std::string> AP_;
   std::vector<LTLFormula*> closure_;
   std::vector<std::set<LTLFormula*>*> elementary_sets_;
 
-  ~ClosureAnalyzer() {
-    for (auto f : created_) delete f;
-    for (auto elem_set : elementary_sets_) delete elem_set;
-  }
+  explicit ClosureAnalyzer(std::set<std::string>* AP) : AP_(AP) {}
+
+  ~ClosureAnalyzer();
 
   void getElementarySet();
 
@@ -48,6 +46,9 @@ class ClosureAnalyzer : public LTLVisitor {
 
  private:
   bool has_true_ = false;
+  bool set_ap_ = false;
+
+  std::set<std::string>* AP_;
 
   // for memory manage
   std::set<LTLFormula*> created_;

@@ -1,10 +1,18 @@
 #include "ba.hpp"
 
 #include "../ltl/printer.hpp"
+#include "../utils/logging.hpp"
 
 namespace alice {
 
 namespace automata {
+
+BuechiAutomata::~BuechiAutomata() {
+  // LOG(INFO) << "destruct gnba";
+  if (trap_ != nullptr) delete trap_->B_;
+  for (auto state : states_) delete state;
+  for (auto symbols : alphabet_) delete symbols;
+}
 
 bool BuechiAutomata::isNonBlocking() const {
   for (const auto& state : states_)
@@ -23,11 +31,14 @@ void BuechiAutomata::showMainBody(std::ostream& os) const {
   }
 
   // print states
-  os << "\tStates: ";
+  os << "\tStates: " << std::endl;
   for (const auto& s : states_) {
-    os << "\t\t" << s->name_ << "={";
-    for (const auto& formula : *s->B_) {
-      os << ltl::toString(formula) << ", ";
+    os << "\t\t" << s->name_ << " = {";
+    // CHECK(s->B_ != nullptr) << s->name_;
+    if (s->B_ != nullptr) {  // ignore the nullptr case
+      for (const auto& formula : *s->B_) {
+        os << ltl::toString(formula) << ", ";
+      }
     }
     os << "}" << std::endl;
   }
@@ -40,13 +51,13 @@ void BuechiAutomata::showMainBody(std::ostream& os) const {
   os << "}" << std::endl;
 
   // print alphabet
-  os << "\tAlphabet: ";
+  os << "\tAlphabet: " << std::endl;
   for (const auto& symbols : alphabet_) {
     os << "\t\t" << symbols->toString() << std::endl;
   }
 
   // print delta functions
-  os << "\tDelta: ";
+  os << "\tDelta: " << std::endl;
   for (const auto& s : states_) {
     for (const auto& p : s->delta_) {
       for (const auto& t : p.second) {
@@ -65,25 +76,25 @@ void BuechiAutomata::show(std::ostream& os) const {
 
 void NondeterministicBuechiAutomata::show(std::ostream& os) const {
   os << "[Nondeterministic Buechi Automata]" << std::endl;
+  showMainBody(os);
   // print F.
   os << "\tF: {";
   for (const auto& s : F_) {
     os << s->name_ << ", ";
   }
   os << "}" << std::endl;
-  showMainBody(os);
 }
 
 void GeneralizedBuechiAutomata::show(std::ostream& os) const {
   os << "[Generalized Buechi Automata]" << std::endl;
+  showMainBody(os);
   // print F.
-  os << "\tF: ";
+  os << "\tF: " << std::endl;
   for (const auto& s_set : F_) {
     os << "\t\t{";
     for (const auto& s : s_set) os << s->name_ << ", ";
     os << "}" << std::endl;
   }
-  showMainBody(os);
 }
 
 }  // namespace automata

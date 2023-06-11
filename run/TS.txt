@@ -1,10 +1,16 @@
-[Transition System]
-	States: {s0, s1, s2, s3, s4, s5, }
-	Transitions: {t0, t1, t2, t3, t4, t5, t6, t7, t8, }
-	Initial States: {s0, }
+[Transition System: Input TS]
+	States: 
+		s0
+		s1
+		s2
+		s3
+		s4
+		s5
+	Initial States: 
+		s0
 	Actions: {0, 1, 2, }
 	AP: {a, b, c, }
-	Edges: 
+	Transitions: 
 		s0 -> s1 (transition: t0, action: 1)
 		s0 -> s3 (transition: t1, action: 0)
 		s1 -> s4 (transition: t3, action: 2)

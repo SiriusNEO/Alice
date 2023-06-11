@@ -9,6 +9,7 @@
 
 #include "../automata/ba.hpp"
 #include "../ltl/ast.hpp"
+#include "../ltl/closure_analyzer.hpp"
 #include "../ts/ts.hpp"
 
 namespace alice {
@@ -19,7 +20,9 @@ namespace algo {
  * \brief Convert LTL Formula to GNBA.
  * Rerference: Principles of Model Checking, P278, Theorem 5.37
  */
-automata::GeneralizedBuechiAutomata* fromLTL(ltl::LTLFormula* formula);
+automata::GeneralizedBuechiAutomata* fromLTL(
+    ltl::LTLFormula* formula, const ltl::ClosureAnalyzer& analyzer,
+    const std::set<std::string>& AP);
 
 /*!
  * \brief Convert GNBA to NBA.
@@ -32,7 +35,7 @@ automata::NondeterministicBuechiAutomata* fromGNBA(
  * \brief TS x NBA -> producted TS.
  * Rerference: Principles of Model Checking, P200, Definition 4.62
  */
-ts::TransitionSystem* productFromTSAndNBA(
+ts::TransitionSystem* productTSAndNBA(
     ts::TransitionSystem* ts, automata::NondeterministicBuechiAutomata* nba);
 
 /*!
@@ -40,6 +43,8 @@ ts::TransitionSystem* productFromTSAndNBA(
  * Rerference: Principles of Model Checking, P211, Algorithm 8
  */
 bool persistenceChecking(ts::TransitionSystem* ts);
+bool persistenceChecking(ts::TransitionSystem* ts, ts::State* start,
+                         automata::NondeterministicBuechiAutomata* nba);
 
 }  // namespace algo
 

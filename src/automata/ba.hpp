@@ -18,13 +18,11 @@ class BuechiAutomata {
   std::vector<State*> states_;
   std::vector<Symbols*> alphabet_;
   std::vector<State*> init_states_;
+  State* trap_;
 
-  BuechiAutomata() : states_(), alphabet_(), init_states_() {}
+  BuechiAutomata() : states_(), alphabet_(), init_states_(), trap_(nullptr) {}
 
-  virtual ~BuechiAutomata() {
-    for (auto state : states_) delete state;
-    for (auto symbols : alphabet_) delete symbols;
-  }
+  virtual ~BuechiAutomata();
 
   virtual void show(std::ostream& os) const;
 

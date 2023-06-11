@@ -1,0 +1,336 @@
+[Closure Analyzer]
+	Has True: False
+	Closure: {
+		(X(a /\ c)), 
+		(!(X(a /\ c))), 
+		(a /\ c), 
+		(!(a /\ c)), 
+		a, 
+		(!a), 
+		b, 
+		(!b), 
+		c, 
+		(!c), 
+	}
+	Elementary Sets: 
+		B1 = {(!(X(a /\ c))), (!(a /\ c)), (!a), (!b), (!c), }
+		B2 = {(!(X(a /\ c))), (!(a /\ c)), (!a), (!b), c, }
+		B3 = {(!(X(a /\ c))), (!(a /\ c)), (!a), b, (!c), }
+		B4 = {(!(X(a /\ c))), (!(a /\ c)), (!a), b, c, }
+		B5 = {(!(X(a /\ c))), (!(a /\ c)), a, (!b), (!c), }
+		B6 = {(!(X(a /\ c))), (!(a /\ c)), a, b, (!c), }
+		B7 = {(a /\ c), (!(X(a /\ c))), a, (!b), c, }
+		B8 = {(a /\ c), (!(X(a /\ c))), a, b, c, }
+		B9 = {(X(a /\ c)), (!(a /\ c)), (!a), (!b), (!c), }
+		B10 = {(X(a /\ c)), (!(a /\ c)), (!a), (!b), c, }
+		B11 = {(X(a /\ c)), (!(a /\ c)), (!a), b, (!c), }
+		B12 = {(X(a /\ c)), (!(a /\ c)), (!a), b, c, }
+		B13 = {(X(a /\ c)), (!(a /\ c)), a, (!b), (!c), }
+		B14 = {(X(a /\ c)), (!(a /\ c)), a, b, (!c), }
+		B15 = {(a /\ c), (X(a /\ c)), a, (!b), c, }
+		B16 = {(a /\ c), (X(a /\ c)), a, b, c, }
+
+[Generalized Buechi Automata]
+	Is NonBlocking: True
+	States: 
+		q0 = {(!(X(a /\ c))), (!(a /\ c)), (!a), (!b), (!c), }
+		q1 = {(!(X(a /\ c))), (!(a /\ c)), (!a), (!b), c, }
+		q2 = {(!(X(a /\ c))), (!(a /\ c)), (!a), b, (!c), }
+		q3 = {(!(X(a /\ c))), (!(a /\ c)), (!a), b, c, }
+		q4 = {(!(X(a /\ c))), (!(a /\ c)), a, (!b), (!c), }
+		q5 = {(!(X(a /\ c))), (!(a /\ c)), a, b, (!c), }
+		q6 = {(a /\ c), (!(X(a /\ c))), a, (!b), c, }
+		q7 = {(a /\ c), (!(X(a /\ c))), a, b, c, }
+		q8 = {(X(a /\ c)), (!(a /\ c)), (!a), (!b), (!c), }
+		q9 = {(X(a /\ c)), (!(a /\ c)), (!a), (!b), c, }
+		q10 = {(X(a /\ c)), (!(a /\ c)), (!a), b, (!c), }
+		q11 = {(X(a /\ c)), (!(a /\ c)), (!a), b, c, }
+		q12 = {(X(a /\ c)), (!(a /\ c)), a, (!b), (!c), }
+		q13 = {(X(a /\ c)), (!(a /\ c)), a, b, (!c), }
+		q14 = {(a /\ c), (X(a /\ c)), a, (!b), c, }
+		q15 = {(a /\ c), (X(a /\ c)), a, b, c, }
+		trap = {}
+	Initial States: {q0, q1, q2, q3, q4, q5, q6, q7, }
+	Alphabet: 
+		{a, b, c, }
+		{a, b, }
+		{a, c, }
+		{a, }
+		{b, c, }
+		{b, }
+		{c, }
+		{}
+	Delta: 
+		q0 -> trap (symbols: {a, b, c, })
+		q0 -> trap (symbols: {a, b, })
+		q0 -> trap (symbols: {a, c, })
+		q0 -> trap (symbols: {a, })
+		q0 -> trap (symbols: {b, c, })
+		q0 -> trap (symbols: {b, })
+		q0 -> trap (symbols: {c, })
+		q0 -> q0 (symbols: {})
+		q0 -> q1 (symbols: {})
+		q0 -> q2 (symbols: {})
+		q0 -> q3 (symbols: {})
+		q0 -> q4 (symbols: {})
+		q0 -> q5 (symbols: {})
+		q0 -> q8 (symbols: {})
+		q0 -> q9 (symbols: {})
+		q0 -> q10 (symbols: {})
+		q0 -> q11 (symbols: {})
+		q0 -> q12 (symbols: {})
+		q0 -> q13 (symbols: {})
+		q1 -> trap (symbols: {a, b, c, })
+		q1 -> trap (symbols: {a, b, })
+		q1 -> trap (symbols: {a, c, })
+		q1 -> trap (symbols: {a, })
+		q1 -> trap (symbols: {b, c, })
+		q1 -> trap (symbols: {b, })
+		q1 -> q0 (symbols: {c, })
+		q1 -> q1 (symbols: {c, })
+		q1 -> q2 (symbols: {c, })
+		q1 -> q3 (symbols: {c, })
+		q1 -> q4 (symbols: {c, })
+		q1 -> q5 (symbols: {c, })
+		q1 -> q8 (symbols: {c, })
+		q1 -> q9 (symbols: {c, })
+		q1 -> q10 (symbols: {c, })
+		q1 -> q11 (symbols: {c, })
+		q1 -> q12 (symbols: {c, })
+		q1 -> q13 (symbols: {c, })
+		q1 -> trap (symbols: {})
+		q2 -> trap (symbols: {a, b, c, })
+		q2 -> trap (symbols: {a, b, })
+		q2 -> trap (symbols: {a, c, })
+		q2 -> trap (symbols: {a, })
+		q2 -> trap (symbols: {b, c, })
+		q2 -> q0 (symbols: {b, })
+		q2 -> q1 (symbols: {b, })
+		q2 -> q2 (symbols: {b, })
+		q2 -> q3 (symbols: {b, })
+		q2 -> q4 (symbols: {b, })
+		q2 -> q5 (symbols: {b, })
+		q2 -> q8 (symbols: {b, })
+		q2 -> q9 (symbols: {b, })
+		q2 -> q10 (symbols: {b, })
+		q2 -> q11 (symbols: {b, })
+		q2 -> q12 (symbols: {b, })
+		q2 -> q13 (symbols: {b, })
+		q2 -> trap (symbols: {c, })
+		q2 -> trap (symbols: {})
+		q3 -> trap (symbols: {a, b, c, })
+		q3 -> trap (symbols: {a, b, })
+		q3 -> trap (symbols: {a, c, })
+		q3 -> trap (symbols: {a, })
+		q3 -> q0 (symbols: {b, c, })
+		q3 -> q1 (symbols: {b, c, })
+		q3 -> q2 (symbols: {b, c, })
+		q3 -> q3 (symbols: {b, c, })
+		q3 -> q4 (symbols: {b, c, })
+		q3 -> q5 (symbols: {b, c, })
+		q3 -> q8 (symbols: {b, c, })
+		q3 -> q9 (symbols: {b, c, })
+		q3 -> q10 (symbols: {b, c, })
+		q3 -> q11 (symbols: {b, c, })
+		q3 -> q12 (symbols: {b, c, })
+		q3 -> q13 (symbols: {b, c, })
+		q3 -> trap (symbols: {b, })
+		q3 -> trap (symbols: {c, })
+		q3 -> trap (symbols: {})
+		q4 -> trap (symbols: {a, b, c, })
+		q4 -> trap (symbols: {a, b, })
+		q4 -> trap (symbols: {a, c, })
+		q4 -> q0 (symbols: {a, })
+		q4 -> q1 (symbols: {a, })
+		q4 -> q2 (symbols: {a, })
+		q4 -> q3 (symbols: {a, })
+		q4 -> q4 (symbols: {a, })
+		q4 -> q5 (symbols: {a, })
+		q4 -> q8 (symbols: {a, })
+		q4 -> q9 (symbols: {a, })
+		q4 -> q10 (symbols: {a, })
+		q4 -> q11 (symbols: {a, })
+		q4 -> q12 (symbols: {a, })
+		q4 -> q13 (symbols: {a, })
+		q4 -> trap (symbols: {b, c, })
+		q4 -> trap (symbols: {b, })
+		q4 -> trap (symbols: {c, })
+		q4 -> trap (symbols: {})
+		q5 -> trap (symbols: {a, b, c, })
+		q5 -> q0 (symbols: {a, b, })
+		q5 -> q1 (symbols: {a, b, })
+		q5 -> q2 (symbols: {a, b, })
+		q5 -> q3 (symbols: {a, b, })
+		q5 -> q4 (symbols: {a, b, })
+		q5 -> q5 (symbols: {a, b, })
+		q5 -> q8 (symbols: {a, b, })
+		q5 -> q9 (symbols: {a, b, })
+		q5 -> q10 (symbols: {a, b, })
+		q5 -> q11 (symbols: {a, b, })
+		q5 -> q12 (symbols: {a, b, })
+		q5 -> q13 (symbols: {a, b, })
+		q5 -> trap (symbols: {a, c, })
+		q5 -> trap (symbols: {a, })
+		q5 -> trap (symbols: {b, c, })
+		q5 -> trap (symbols: {b, })
+		q5 -> trap (symbols: {c, })
+		q5 -> trap (symbols: {})
+		q6 -> trap (symbols: {a, b, c, })
+		q6 -> trap (symbols: {a, b, })
+		q6 -> q0 (symbols: {a, c, })
+		q6 -> q1 (symbols: {a, c, })
+		q6 -> q2 (symbols: {a, c, })
+		q6 -> q3 (symbols: {a, c, })
+		q6 -> q4 (symbols: {a, c, })
+		q6 -> q5 (symbols: {a, c, })
+		q6 -> q8 (symbols: {a, c, })
+		q6 -> q9 (symbols: {a, c, })
+		q6 -> q10 (symbols: {a, c, })
+		q6 -> q11 (symbols: {a, c, })
+		q6 -> q12 (symbols: {a, c, })
+		q6 -> q13 (symbols: {a, c, })
+		q6 -> trap (symbols: {a, })
+		q6 -> trap (symbols: {b, c, })
+		q6 -> trap (symbols: {b, })
+		q6 -> trap (symbols: {c, })
+		q6 -> trap (symbols: {})
+		q7 -> q0 (symbols: {a, b, c, })
+		q7 -> q1 (symbols: {a, b, c, })
+		q7 -> q2 (symbols: {a, b, c, })
+		q7 -> q3 (symbols: {a, b, c, })
+		q7 -> q4 (symbols: {a, b, c, })
+		q7 -> q5 (symbols: {a, b, c, })
+		q7 -> q8 (symbols: {a, b, c, })
+		q7 -> q9 (symbols: {a, b, c, })
+		q7 -> q10 (symbols: {a, b, c, })
+		q7 -> q11 (symbols: {a, b, c, })
+		q7 -> q12 (symbols: {a, b, c, })
+		q7 -> q13 (symbols: {a, b, c, })
+		q7 -> trap (symbols: {a, b, })
+		q7 -> trap (symbols: {a, c, })
+		q7 -> trap (symbols: {a, })
+		q7 -> trap (symbols: {b, c, })
+		q7 -> trap (symbols: {b, })
+		q7 -> trap (symbols: {c, })
+		q7 -> trap (symbols: {})
+		q8 -> trap (symbols: {a, b, c, })
+		q8 -> trap (symbols: {a, b, })
+		q8 -> trap (symbols: {a, c, })
+		q8 -> trap (symbols: {a, })
+		q8 -> trap (symbols: {b, c, })
+		q8 -> trap (symbols: {b, })
+		q8 -> trap (symbols: {c, })
+		q8 -> q6 (symbols: {})
+		q8 -> q7 (symbols: {})
+		q8 -> q14 (symbols: {})
+		q8 -> q15 (symbols: {})
+		q9 -> trap (symbols: {a, b, c, })
+		q9 -> trap (symbols: {a, b, })
+		q9 -> trap (symbols: {a, c, })
+		q9 -> trap (symbols: {a, })
+		q9 -> trap (symbols: {b, c, })
+		q9 -> trap (symbols: {b, })
+		q9 -> q6 (symbols: {c, })
+		q9 -> q7 (symbols: {c, })
+		q9 -> q14 (symbols: {c, })
+		q9 -> q15 (symbols: {c, })
+		q9 -> trap (symbols: {})
+		q10 -> trap (symbols: {a, b, c, })
+		q10 -> trap (symbols: {a, b, })
+		q10 -> trap (symbols: {a, c, })
+		q10 -> trap (symbols: {a, })
+		q10 -> trap (symbols: {b, c, })
+		q10 -> q6 (symbols: {b, })
+		q10 -> q7 (symbols: {b, })
+		q10 -> q14 (symbols: {b, })
+		q10 -> q15 (symbols: {b, })
+		q10 -> trap (symbols: {c, })
+		q10 -> trap (symbols: {})
+		q11 -> trap (symbols: {a, b, c, })
+		q11 -> trap (symbols: {a, b, })
+		q11 -> trap (symbols: {a, c, })
+		q11 -> trap (symbols: {a, })
+		q11 -> q6 (symbols: {b, c, })
+		q11 -> q7 (symbols: {b, c, })
+		q11 -> q14 (symbols: {b, c, })
+		q11 -> q15 (symbols: {b, c, })
+		q11 -> trap (symbols: {b, })
+		q11 -> trap (symbols: {c, })
+		q11 -> trap (symbols: {})
+		q12 -> trap (symbols: {a, b, c, })
+		q12 -> trap (symbols: {a, b, })
+		q12 -> trap (symbols: {a, c, })
+		q12 -> q6 (symbols: {a, })
+		q12 -> q7 (symbols: {a, })
+		q12 -> q14 (symbols: {a, })
+		q12 -> q15 (symbols: {a, })
+		q12 -> trap (symbols: {b, c, })
+		q12 -> trap (symbols: {b, })
+		q12 -> trap (symbols: {c, })
+		q12 -> trap (symbols: {})
+		q13 -> trap (symbols: {a, b, c, })
+		q13 -> q6 (symbols: {a, b, })
+		q13 -> q7 (symbols: {a, b, })
+		q13 -> q14 (symbols: {a, b, })
+		q13 -> q15 (symbols: {a, b, })
+		q13 -> trap (symbols: {a, c, })
+		q13 -> trap (symbols: {a, })
+		q13 -> trap (symbols: {b, c, })
+		q13 -> trap (symbols: {b, })
+		q13 -> trap (symbols: {c, })
+		q13 -> trap (symbols: {})
+		q14 -> trap (symbols: {a, b, c, })
+		q14 -> trap (symbols: {a, b, })
+		q14 -> q6 (symbols: {a, c, })
+		q14 -> q7 (symbols: {a, c, })
+		q14 -> q14 (symbols: {a, c, })
+		q14 -> q15 (symbols: {a, c, })
+		q14 -> trap (symbols: {a, })
+		q14 -> trap (symbols: {b, c, })
+		q14 -> trap (symbols: {b, })
+		q14 -> trap (symbols: {c, })
+		q14 -> trap (symbols: {})
+		q15 -> q6 (symbols: {a, b, c, })
+		q15 -> q7 (symbols: {a, b, c, })
+		q15 -> q14 (symbols: {a, b, c, })
+		q15 -> q15 (symbols: {a, b, c, })
+		q15 -> trap (symbols: {a, b, })
+		q15 -> trap (symbols: {a, c, })
+		q15 -> trap (symbols: {a, })
+		q15 -> trap (symbols: {b, c, })
+		q15 -> trap (symbols: {b, })
+		q15 -> trap (symbols: {c, })
+		q15 -> trap (symbols: {})
+		trap -> trap (symbols: {a, b, c, })
+		trap -> trap (symbols: {a, b, })
+		trap -> trap (symbols: {a, c, })
+		trap -> trap (symbols: {a, })
+		trap -> trap (symbols: {b, c, })
+		trap -> trap (symbols: {b, })
+		trap -> trap (symbols: {c, })
+		trap -> trap (symbols: {})
+	F: 
+
+[Nondeterministic Buechi Automata]
+	Is NonBlocking: True
+	States: 
+	Initial States: {}
+	Alphabet: 
+		{a, b, c, }
+		{a, b, }
+		{a, c, }
+		{a, }
+		{b, c, }
+		{b, }
+		{c, }
+		{}
+	Delta: 
+	F: {}
+
+[Transition System: Producted TS]
+	States: 
+	Initial States: 
+	Actions: {0, 1, 2, }
+	AP: {}
+	Transitions: 
+	L: 

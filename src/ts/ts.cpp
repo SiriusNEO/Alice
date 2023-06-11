@@ -13,29 +13,28 @@ TransitionSystem::~TransitionSystem() {
   for (const auto& p : AP_) delete p;
 }
 
-void TransitionSystem::show(std::ostream& os) const {
-  os << "[Transition System]" << std::endl;
+void TransitionSystem::link(State* from, State* to, Transition* trans,
+                            Action* act) {
+  trans->from_ = from;
+  trans->to_ = to;
+  trans->action_ = act;
+  from->out_edges_.push_back(trans);
+}
+
+void TransitionSystem::show(std::ostream& os, const std::string& name) const {
+  os << "[Transition System: " << name << "]" << std::endl;
 
   // print states
-  os << "\tStates: {";
+  os << "\tStates: " << std::endl;
   for (const auto& s : states_) {
-    os << s->name_ << ", ";
+    os << "\t\t" << s->name_ << std::endl;
   }
-  os << "}" << std::endl;
-
-  // print transitions
-  os << "\tTransitions: {";
-  for (const auto& t : transitions_) {
-    os << t->name_ << ", ";
-  }
-  os << "}" << std::endl;
 
   // print init states
-  os << "\tInitial States: {";
+  os << "\tInitial States: " << std::endl;
   for (const auto& s : init_states_) {
-    os << s->name_ << ", ";
+    os << "\t\t" << s->name_ << std::endl;
   }
-  os << "}" << std::endl;
 
   // print actions
   os << "\tActions: {";
@@ -52,7 +51,7 @@ void TransitionSystem::show(std::ostream& os) const {
   os << "}" << std::endl;
 
   // print edges
-  os << "\tEdges: " << std::endl;
+  os << "\tTransitions: " << std::endl;
   for (const auto& s : states_) {
     for (const auto& t : s->out_edges_) {
       os << "\t\t" << s->name_ << " -> " << t->to_->name_

@@ -1,5 +1,6 @@
 #include <stack>
 
+#include "../utils/logging.hpp"
 #include "algo.hpp"
 #include "utils.hpp"
 
@@ -13,6 +14,7 @@ bool cycle_found;
 
 void init() {
   cycle_found = false;
+  I.clear();
   R.clear();
   T.clear();
   while (!U.empty()) {
@@ -81,11 +83,30 @@ void reachableCycle(ts::State* s) {
     if (!check_flag) {
       U.pop();
       // check whether s_prime \vdash \neg F
-      if (s_prime->L_[0]->name_[0] != 'f') {
+      if (s_prime->L_[0]->name_[0] == '@') {
         cycle_found = cycleCheck(s_prime);
       }
     }
   } while (!U.empty() && !cycle_found);
+}
+
+void reportCycleInLog() {
+  std::string info_str = "Cycle Found in Check.\n\tPath: ";
+  while (!U.empty()) {
+    auto s = U.top();
+    U.pop();
+    info_str += s->name_;
+    if (!U.empty()) info_str += " -> ";
+  }
+  info_str += "\n\tCycle: ";
+  while (!V.empty()) {
+    auto s = V.top();
+    V.pop();
+    info_str += s->name_;
+    if (!V.empty()) info_str += " - ";
+  }
+
+  LOG(INFO) << info_str;
 }
 
 bool persistenceChecking(ts::TransitionSystem* ts) {
@@ -97,13 +118,14 @@ bool persistenceChecking(ts::TransitionSystem* ts) {
     reachableCycle(s);
   }
 
+  if (cycle_found) reportCycleInLog();
+
   return !cycle_found;
 }
 
 bool persistenceChecking(ts::TransitionSystem* ts, ts::State* start,
                          automata::NondeterministicBuechiAutomata* nba) {
   init();
-  I = std::set<ts::State*>();
   for (const auto& q0 : nba->init_states_) {
     auto q_set = std::move(getOutStatesByL(nba, q0, start));
     for (const auto& q : q_set) {
@@ -115,6 +137,8 @@ bool persistenceChecking(ts::TransitionSystem* ts, ts::State* start,
     auto s = *I.begin();
     reachableCycle(s);
   }
+
+  if (cycle_found) reportCycleInLog();
 
   return !cycle_found;
 }

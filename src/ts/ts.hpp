@@ -24,7 +24,7 @@ class TransitionSystem {
   std::vector<Action*> actions_;
   std::vector<AtomicProposition*> AP_;
 
-  std::vector<State*> init_states_;
+  std::set<State*> init_states_;
 
   // <s, q> -> true state in product ts.
   std::map<std::pair<State*, automata::State*>, State*> sq_map_;
@@ -34,7 +34,9 @@ class TransitionSystem {
 
   ~TransitionSystem();
 
-  void show(std::ostream& os) const;
+  void show(std::ostream& os, const std::string& name) const;
+
+  static void link(State* from, State* to, Transition* trans, Action* act);
 };
 
 }  // namespace ts
