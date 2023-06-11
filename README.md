@@ -229,4 +229,4 @@ If a cycle is found, the path to the cycle (contents in the stack `U`) and the c
 
 ## Screenshots
 
-See the [docs of screenshots](docs/Screenshots.md) to see how it looks like when running a simple example.
+See the [docs of screenshots](docs/Screenshots.md) to see what it looks like when running a simple example.
