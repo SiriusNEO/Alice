@@ -92,12 +92,21 @@ void reachableCycle(ts::State* s) {
 
 void reportCycleInLog() {
   std::string info_str = "Cycle Found in Check.\n\tPath: ";
+
+  std::vector<std::string> path_buffer;
   while (!U.empty()) {
     auto s = U.top();
     U.pop();
-    info_str += s->name_;
-    if (!U.empty()) info_str += " -> ";
+    path_buffer.push_back(s->name_);
   }
+  for (auto it = path_buffer.rbegin(); it != path_buffer.rend();) {
+    info_str += *it;
+    ++it;
+    if (it != path_buffer.rend()) {
+      info_str += " -> ";
+    }
+  }
+
   info_str += "\n\tCycle: ";
   while (!V.empty()) {
     auto s = V.top();
