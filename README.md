@@ -113,7 +113,7 @@ B[TS]
 C[GNBA]
 D[NBA]
 E[Closure Analyzer]
-F[Product Ts]
+F[Product TS]
 G[Result]
 A ==algo::fromLTL==> C
 E ==> C
