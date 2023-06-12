@@ -19,7 +19,7 @@ Valid Tokens
 "U"   { return T_UNTIL; }
 ```
 
-The rule of identifiers (propositions): `[a-zA-Z_][0-9a-zA-Z_]*`
+The rule of identifiers (atom propositions): `[a-z]+` (i.e all lower case letters)
 
 Note: Escape character`\` should be written as `\\`
 

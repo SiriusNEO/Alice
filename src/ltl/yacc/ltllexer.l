@@ -23,7 +23,7 @@
 "F"   { return T_EVEN; }
 "U"   { return T_UNTIL; }
 
-[a-zA-Z_][0-9a-zA-Z_]* {
+[a-z]+ {
     yylval.str_val = new std::string(yytext);
     return ID;
 }
